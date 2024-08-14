@@ -1,0 +1,73 @@
+.landing-page-body{
+    background-color: #EBF4F6;
+}
+.landing-page-image-container{
+    position: relative;
+    width: 100%; 
+    max-width: 1500px; 
+    margin: 0 auto; 
+    overflow: hidden;
+}
+.page-image{
+    width:  100%;
+    height: 500px;
+    object-fit: cover;
+
+}
+.booking-form{
+    position: absolute;
+    top: 85%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    display: flex;
+    gap: 10px; 
+}
+.arrival-button,
+.departure-button,
+.guests-button{
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    width: 120px;
+    padding: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #686D76;
+    background-color: white;
+}
+.book-now{
+    margin-left: 20px;
+    padding: 5px auto;
+    height: 40px;
+    width: 120px;
+    font-size: 16px;
+}
+.aboutUs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0px;
+    margin-top: 0px;
+    background-color: #CCD3CA;
+}
+.aboutUs h1{
+    text-align: left;
+    color: #4C0033;
+    padding-left: 10px;
+    font-size: 27px;
+}
+.description h2{
+    text-align: right;
+    color: #4C0033;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.description p{
+    text-align: justify;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 700px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
