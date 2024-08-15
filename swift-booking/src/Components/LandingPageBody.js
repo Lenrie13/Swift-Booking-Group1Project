@@ -1,26 +1,35 @@
-import React from 'react'
-import "./LandingPageBody.css"
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './LandingPageBody.css';
 
-function LandingPageBody() {
+function LandingPageBody({ setIsAuthenticated }) {
+    const navigate = useNavigate();
+
+    const handleSignOut = () => {
+        // Clear user session or authentication state here
+        setIsAuthenticated(false); // Update authentication state
+        navigate('/'); // Redirect to the homepage
+    };
+
     return (
         <div className="landing-page-body">
-            <div className='landing-page-image-container'>
+            <div className="landing-page-image-container">
                 <img
                     src={require('../assets/SwiftBookingImages/landing-page-image.webp')}
-                    alt="img"
+                    alt="Landing Page"
                     className="page-image"
                 />
                 <div className="booking-form">
-                    <button className='arrival-button'>Arrival</button>
-                    <button className='departure-button'>Departure</button>
-                    <button className='guests-button'>Guests</button>
+                    <button className="arrival-button">Arrival</button>
+                    <button className="departure-button">Departure</button>
+                    <button className="guests-button">Guests</button>
                     <button className="book-now">BOOK NOW!</button>
                 </div>
             </div>
 
             <div className="aboutUs">
                 <h1>SWIFT BOOKING</h1>
-                <div className='description'>
+                <div className="description">
                     <h2>ABOUT US</h2>
                     <p>
                         At Swift Booking, we enlist only the best hotels where you stay once
@@ -30,8 +39,12 @@ function LandingPageBody() {
                     </p>
                 </div>
             </div>
+
+            <button className="sign-out-button" onClick={handleSignOut}>
+                Sign Out
+            </button>
         </div>
     );
 }
 
-export default LandingPageBody
+export default LandingPageBody;
