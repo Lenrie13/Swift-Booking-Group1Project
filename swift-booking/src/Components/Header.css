@@ -1,6 +1,39 @@
 .header {
     
 }
+
+.hotel-gallery,
+.hotel-rooms {
+    margin-top: 20px;
+}
+
+.gallery-images,
+.room-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.gallery-image,
+.room-image {
+    flex: 1;
+    max-width: calc(25% - 10px); /* Adjust based on desired number of columns */
+    box-sizing: border-box;
+}
+
+.gallery-image img,
+.room-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gallery-image p,
+.room-image p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
 .top-header-elements-container{
     width: 100%;
     display: flex;
