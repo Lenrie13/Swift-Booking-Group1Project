@@ -115,6 +115,7 @@ function Header() {
                 <button className='nav-button'>Reviews & Ratings</button>
                 <button className='nav-button'>Contact Us</button>
             </nav>
+            
             <div className='hotel-list'>
                 {filteredHotels.map((hotel) => (
                     <div key={hotel.id} className='hotel-item'>
