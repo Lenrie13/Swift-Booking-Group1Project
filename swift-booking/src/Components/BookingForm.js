@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './BookingForm.css';
 
-const BookingForm = ({ onSubmit }) => {
+const BookingForm = ({ onSubmit, deals }) => {
   const [formData, setFormData] = useState({
     name: '',
     idNumber: '',
@@ -10,12 +10,29 @@ const BookingForm = ({ onSubmit }) => {
     email: '',
     roomType: '',
     additionalServices: '',
+    totalCost: 0,
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleRoomTypeChange = (e) => {
+    const selectedRoomType = e.target.value;
+    const selectedDeal = deals.find((deal) => deal.roomType === selectedRoomType);
+
+    // Apply discount if there's a deal, otherwise set price to 0
+    const discountedPrice = selectedDeal ? 
+      selectedDeal.price - (selectedDeal.price * selectedDeal.discountPercentage / 100) : 
+      0;
+
+    setFormData({
+      ...formData,
+      roomType: selectedRoomType,
+      totalCost: discountedPrice,
     });
   };
 
@@ -96,7 +113,7 @@ const BookingForm = ({ onSubmit }) => {
           id="roomType"
           name="roomType"
           value={formData.roomType}
-          onChange={handleChange}
+          onChange={handleRoomTypeChange}
           required
         >
           <option value="">Select Room Type</option>
@@ -115,6 +132,16 @@ const BookingForm = ({ onSubmit }) => {
           value={formData.additionalServices}
           onChange={handleChange}
           placeholder="Additional Services"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="totalCost">Total Cost:</label>
+        <input
+          type="text"
+          id="totalCost"
+          name="totalCost"
+          value={formData.totalCost}
+          readOnly
         />
       </div>
       <button type="submit">Submit</button>

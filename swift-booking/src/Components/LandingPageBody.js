@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPageBody.css';
+import Deals from './Deals';
 
 function LandingPageBody({ setIsAuthenticated }) {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function LandingPageBody({ setIsAuthenticated }) {
           <button className="book-now" onClick={handleBookNowClick}>BOOK NOW!</button>
         </div>
       </div>
+      <Deals />
 
       <div className="aboutUs">
         <h1>SWIFT BOOKING</h1>
