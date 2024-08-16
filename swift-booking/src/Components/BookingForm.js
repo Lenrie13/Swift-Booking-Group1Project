@@ -37,21 +37,22 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
 
   const handleRoomTypeChange = (e) => {
     const selectedRoomType = e.target.value;
-
+  
     const selectedDeal = deals.length > 0
       ? deals.find((deal) => deal.roomType === selectedRoomType)
       : null;
-
+  
     const discountedPrice = selectedDeal
       ? selectedDeal.price - (selectedDeal.price * selectedDeal.discountPercentage / 100)
       : 0;
-
+  
     setFormData({
       ...formData,
       roomType: selectedRoomType,
       totalCost: discountedPrice,
     });
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -184,7 +185,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             <option value="single">Single Room</option>
             <option value="double">Double Room</option>
             <option value="deluxe">Deluxe Room</option>
-            <option value="suite">Luxury Suite</option>
+            <option value="luxury">Luxury Suite</option>
           </select>
         </div>
         <div className="form-group">
