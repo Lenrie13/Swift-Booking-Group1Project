@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './BookingForm.css';
 
-const BookingForm = ({ onSubmit, deals }) => {
+const BookingForm = ({ onSubmit, deals = [] }) => { // Default deals to an empty array
   const [formData, setFormData] = useState({
     name: '',
     idNumber: '',
@@ -22,12 +22,16 @@ const BookingForm = ({ onSubmit, deals }) => {
 
   const handleRoomTypeChange = (e) => {
     const selectedRoomType = e.target.value;
-    const selectedDeal = deals.find((deal) => deal.roomType === selectedRoomType);
+
+    // Check if deals array is not empty and find the selected deal
+    const selectedDeal = deals.length > 0
+      ? deals.find((deal) => deal.roomType === selectedRoomType)
+      : null;
 
     // Apply discount if there's a deal, otherwise set price to 0
-    const discountedPrice = selectedDeal ? 
-      selectedDeal.price - (selectedDeal.price * selectedDeal.discountPercentage / 100) : 
-      0;
+    const discountedPrice = selectedDeal
+      ? selectedDeal.price - (selectedDeal.price * selectedDeal.discountPercentage / 100)
+      : 0;
 
     setFormData({
       ...formData,
