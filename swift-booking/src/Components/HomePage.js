@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import './HomePage.css'; // Make sure this file contains styles for the HomePage
+import './HomePage.css'; 
 
 function HomePage({ setIsAuthenticated }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = (e) => {
-        e.preventDefault();
+    const handleLogin = (event) => {
+        event.preventDefault();
         // Add login logic here (e.g., validate credentials)
         setIsAuthenticated(true); // Set authentication state to true
     };
 
-    const handleSignUp = (e) => {
-        e.preventDefault();
+    const handleSignUp = (event) => {
+        event.preventDefault();
         // Add sign-up logic here (e.g., create a new account)
         setIsAuthenticated(true); // Set authentication state to true for demo purposes
     };
@@ -28,7 +28,7 @@ function HomePage({ setIsAuthenticated }) {
                             type="email"
                             id="email"
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(event) => setEmail(event.target.value)}
                             required
                             autoComplete="off" // Disable autofill
                         />
@@ -39,7 +39,7 @@ function HomePage({ setIsAuthenticated }) {
                             type="password"
                             id="password"
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={(event) => setPassword(event.target.value)}
                             required
                             autoComplete="off" // Disable autofill
                         />

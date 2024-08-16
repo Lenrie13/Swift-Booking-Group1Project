@@ -62,9 +62,9 @@ import voyagerSingleRoom from '../assets/SwiftBookingImages/Voyager-BeachResort/
 
 function Header() {
     const [hotels, setHotels] = useState([
-        { id: 1, name: 'Neptunes Beach Resort', location: 'Mombasa' },
-        { id: 2, name: 'Pride Inn Beach Resort', location: 'Mombasa' },
-        { id: 3, name: 'Sarova White Sands', location: 'Mombasa' },
+        { id: 1, name: 'Neptune Beach Resort', location: 'Diani' },
+        { id: 2, name: 'Pride Inn Beach Resort', location: 'Diani' },
+        { id: 3, name: 'Sarova White Sands', location: 'Diani' },
         { id: 4, name: 'Voyager Beach Resort', location: 'Mombasa' },
     ]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -121,7 +121,7 @@ function Header() {
                         <h3>{hotel.name}</h3>
                         {selectedHotel && selectedHotel.id === hotel.id && (
                             <div>
-                                {selectedHotel.name === 'Neptunes Beach Resort' && (
+                                {selectedHotel.name === 'Neptune Beach Resort' && (
                                     <div>
                                         <div className='hotel-gallery'>
                                             <h4>Gallery</h4>
@@ -172,8 +172,8 @@ function Header() {
                                                     <p>Comfortable Double Room</p>
                                                 </div>
                                                 <div className='room-image'>
-                                                    <img src={neptuneLuxuryRoom} alt="Luxury Room" />
-                                                    <p>Luxury Room with premium amenities</p>
+                                                    <img src={neptuneLuxuryRoom} alt="Luxury Suite" />
+                                                    <p>Luxury Suite with premium amenities</p>
                                                 </div>
                                                 <div className='room-image'>
                                                     <img src={neptuneSingleRoom} alt="Single Room" />
@@ -234,8 +234,8 @@ function Header() {
                                                     <p>Spacious Double Room</p>
                                                 </div>
                                                 <div className='room-image'>
-                                                    <img src={prideInnLuxuryRoom} alt="Luxury Room" />
-                                                    <p>Luxury Room with top amenities</p>
+                                                    <img src={prideInnLuxuryRoom} alt="Luxury Suite" />
+                                                    <p>Luxury Suite with top amenities</p>
                                                 </div>
                                                 <div className='room-image'>
                                                     <img src={prideInnSingleRoom} alt="Single Room" />
@@ -296,8 +296,8 @@ function Header() {
                                                     <p>Comfortable Double Room</p>
                                                 </div>
                                                 <div className='room-image'>
-                                                    <img src={sarovaLuxuryRoom} alt="Luxury Room" />
-                                                    <p>Luxury Room with upscale amenities</p>
+                                                    <img src={sarovaLuxuryRoom} alt="Luxury Suite" />
+                                                    <p>Luxury Suite with upscale amenities</p>
                                                 </div>
                                                 <div className='room-image'>
                                                     <img src={sarovaSingleRoom} alt="Single Room" />
@@ -358,8 +358,8 @@ function Header() {
                                                     <p>Comfortable Double Room</p>
                                                 </div>
                                                 <div className='room-image'>
-                                                    <img src={voyagerLuxuryRoom} alt="Luxury Room" />
-                                                    <p>Luxury Room with high-end amenities</p>
+                                                    <img src={voyagerLuxuryRoom} alt="Luxury Suite" />
+                                                    <p>Luxury Suite with high-end amenities</p>
                                                 </div>
                                                 <div className='room-image'>
                                                     <img src={voyagerSingleRoom} alt="Single Room" />
