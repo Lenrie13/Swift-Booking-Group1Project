@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { addDays } from 'date-fns';
 import './LandingPageBody.css';
+import Deals from './Deals';
 
 function LandingPageBody({ setIsAuthenticated }) {
   const navigate = useNavigate();
@@ -252,6 +253,7 @@ function LandingPageBody({ setIsAuthenticated }) {
           </div>
         )}
       </div>
+      <Deals />
 
       <div className="aboutUs">
         <h1>SWIFT BOOKING</h1>

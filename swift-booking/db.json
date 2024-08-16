@@ -265,14 +265,40 @@
         "comment": "Amazing experience! Clean spaces and the staff was very helpful."
       }
     ],
-    "deals": [
-      {
-        "id": 1,
-        "hotelId": 2,
-        "title": "Summer Special",
-        "description": "Get 20% off on all room bookings this summer.",
-        "discountPercentage": 20,
-        "validTill": "2024-09-30"
-      }
-    ]
-  }
+      "deals": [
+        {
+          "id": 1,
+          "hotelId": 1,
+          "title": "Neptune Beach Resort Summer Sale",
+          "description": "Enjoy a 25% discount on your stay at Neptune Beach Resort for the summer season!",
+          "discountPercentage": 25,
+          "validTill": "2024-09-30"
+        },
+        {
+          "id": 2,
+          "hotelId": 2,
+          "title": "Pride Inn Beach Resort Weekend Special",
+          "description": "Get 15% off on weekend stays at Pride Inn Beach Resort!",
+          "discountPercentage": 15,
+          "validTill": "2024-08-31"
+        },
+        {
+          "id": 3,
+          "hotelId": 3,
+          "title": "Sarova White Sands Early Bird Discount",
+          "description": "Book early and save 20% on your stay at Sarova White Sands.",
+          "discountPercentage": 20,
+          "validTill": "2024-10-15"
+        },
+        {
+          "id": 4,
+          "hotelId": 4,
+          "title": "Voyager Beach Resort Family Package",
+          "description": "Save 30% on family bookings at Voyager Beach Resort. Perfect for a family vacation!",
+          "discountPercentage": 30,
+          "validTill": "2024-12-31"
+        }
+      ]
+    }
+    
+  

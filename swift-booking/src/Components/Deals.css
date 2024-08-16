@@ -1,0 +1,26 @@
+.deals-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .deals-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .deal-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .deal-item h3 {
+    margin: 0 0 5px;
+    color: #333;
+  }
+  
+  .deal-item p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
