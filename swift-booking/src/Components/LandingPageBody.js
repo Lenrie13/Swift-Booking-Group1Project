@@ -268,9 +268,7 @@ function LandingPageBody({ setIsAuthenticated }) {
         </div>
       </div>
 
-      <button className="sign-out-button" onClick={handleSignOut}>
-        Sign Out
-      </button>
+    
     </div>
   );
 }
