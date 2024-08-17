@@ -5,6 +5,7 @@ import LandingPageBody from './Components/LandingPageBody';
 import HomePage from './Components/HomePage';
 import BookingPage from './Components/BookingPage';
 import PaymentForm from './Components/PaymentForm';
+import HotelDetails from './Components/HotelDetails';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -27,16 +28,11 @@ function App() {
               )
             }
           />
-          <Route
-            path="/book-now"
-            element={<BookingPage />}
-          />
+          <Route path="/book-now" element={<BookingPage />} />
           {bookingData && (
-            <Route
-              path="/payment"
-              element={<PaymentForm bookingData={bookingData} />}
-            />
+            <Route path="/payment" element={<PaymentForm bookingData={bookingData} />} />
           )}
+          <Route path="/hotel/:id" element={<HotelDetails />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>

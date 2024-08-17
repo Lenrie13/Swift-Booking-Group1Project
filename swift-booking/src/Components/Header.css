@@ -1,119 +1,68 @@
 .header {
-    
-}
-
-.hotel-gallery,
-.hotel-rooms {
-    margin-top: 20px;
-}
-
-.gallery-images,
-.room-images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.gallery-image,
-.room-image {
-    flex: 1;
-    max-width: calc(25% - 10px); /* Adjust based on desired number of columns */
-    box-sizing: border-box;
-}
-
-.gallery-image img,
-.room-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.gallery-image p,
-.room-image p {
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 5px;
-}
-
-.top-header-elements-container{
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 20px;
-    background-color: #EEEEEE;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    position: relative; /* Add relative positioning for the header */
 }
-.logo img{
-    height: 120px;
-    width: 90px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    vertical-align: top;
+
+.logo-container {
+    display: flex;
+    align-items: center;
 }
-.app-name{
-    margin-left: 10px;
-    margin-top: 60px;
-    color: #4C0033;
+
+.logo {
+    height: 50px;
+    margin-right: 10px; /* Space between logo and site name */
 }
-.app-name h1{
+
+.site-name {
     font-size: 24px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.search-bar{
-    margin-top: 70px;
-    margin-left: 10px;
-}
-.search-bar input{
-    width: 400px; 
-    padding: 8px 16px; 
-    border-radius: 4px; 
-    border: 1px solid #ccc; 
-    font-size: 16px; 
-    box-sizing: border-box; 
-}
-.contact-info{
-    margin-top: 67px;
-    margin-left: 90px;
     font-weight: bold;
-    cursor: pointer;
+    color: #333; /* Dark grey color for better readability */
+    letter-spacing: 1px; /* Slight spacing between letters for a more polished look */
 }
-.book-now-header{
-    height: 30px;
-    width: 100px;
-    margin-top: 70px;
-    margin-left: 240px;
-    margin-right: 20px;
-    font-size: 16px;
-    background-color: #4C0033;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
+
+.search-bar-container {
+    position: relative;
+    flex-grow: 1; /* Allow the search bar to use available space */
+    margin: 0 20px; /* Add some margin to space it out from other elements */
+}
+
+input[type='text'] {
     padding: 5px;
+    width: 100%; /* Allow the input to take the full width of the container */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
-.nav-button{
-    margin-right: 20px;
-    margin-top: 30px;
-    margin-bottom: 0px;
-    padding: 6px;
-    border: none;
-    border-radius: 4px;
-    background-color: #6F0877;
-    color: white;
-    font-weight: bold;
+
+.hotel-names {
+    position: absolute;
+    top: 100%; /* Position the dropdown just below the input field */
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    max-height: 200px; /* Increase max-height to allow more items to be visible */
+    overflow-y: auto;
+    width: 100%; /* Match the width of the input field */
+    z-index: 1000; /* Ensure dropdown is above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+}
+
+.hotel-name {
+    padding: 10px;
     cursor: pointer;
 }
-.book-now{
-    height: 30px;
-    width: 100px;
-    margin-right: 20px;
-    background-color: #4C0033;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    padding: 6px;
-    cursor: pointer;
+
+.hotel-name:hover {
+    background-color: #f0f0f0;
+}
+
+.sign-out-button-container {
+    display: flex;
+    align-items: center;
+}
+
+.sign-out-button {
+    padding: 5px 10px;
 }

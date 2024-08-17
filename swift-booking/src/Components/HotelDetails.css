@@ -1,0 +1,48 @@
+.hotel-details {
+    padding: 20px;
+}
+
+.hotel-gallery, .hotel-rooms {
+    margin-bottom: 20px;
+}
+
+.gallery-images, .room-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-image, .room-image {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}
+
+.gallery-image img, .room-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-image p, .room-image p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.book-now-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.book-now-button:hover {
+    background-color: #0056b3;
+}
