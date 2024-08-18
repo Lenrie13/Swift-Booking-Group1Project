@@ -13,13 +13,15 @@
 }
 
 .logo {
-    height: 50px;
-    margin-right: 10px; /* Space between logo and site name */
+    height: 70px;
+    width: 60px;
+    margin-right: 2px; /* Space between logo and site name */
 }
 
 .site-name {
     font-size: 24px;
     font-weight: bold;
+    margin-top: 30px;
     color: #333; /* Dark grey color for better readability */
     letter-spacing: 1px; /* Slight spacing between letters for a more polished look */
 }
@@ -32,6 +34,7 @@
 
 input[type='text'] {
     padding: 5px;
+    margin-top: 30px;
     width: 100%; /* Allow the input to take the full width of the container */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
