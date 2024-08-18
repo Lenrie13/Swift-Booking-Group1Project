@@ -1,14 +1,12 @@
-import { useCallback, useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import "./BookingManagement.css";
 
 export const BookingManagement = (props) => {
     const { signedInUser } = props;
     const [signedInUserBookings, setSignedInUserBookings] = useState([]);
     const location = useLocation();
     const { bookingData } = location.state ?? {};
-    console.log("The bookingData is======>", bookingData);
-    console.log("The signed in user is=====>", signedInUser);
-    console.log("The signed in user bookings---->", signedInUserBookings);
 
     useEffect(() => {
         fetch('http://localhost:3000/payments')
@@ -16,38 +14,32 @@ export const BookingManagement = (props) => {
             .then(data => setSignedInUserBookings(data.filter((booking) => booking.user.id === signedInUser.id)))
             .catch(error => console.error('Error fetching bookings:', error));
 
-    }, [signedInUser])
+    }, [signedInUser]);
 
     const cancelBooking = (booking) => {
         fetch(`http://localhost:3000/payments/${booking.id}`, {
             method: 'DELETE'
-        }).then((response)=>response.json())
-        .then((data)=>{
-            setSignedInUserBookings((previousBookings)=>previousBookings.filter((bookingItem)=>bookingItem.id !== booking.id));
-            console.log("Deletion response", data);
-        }).catch((error)=>{
-            console.log("Error deleting booking", booking);
-        })
-    }
-
+        }).then(() => {
+            setSignedInUserBookings((previousBookings) => previousBookings.filter((bookingItem) => bookingItem.id !== booking.id));
+        }).catch((error) => {
+            console.log("Error deleting booking", error);
+        });
+    };
 
     return (
-        <div style={{
-            height: "100vh",
-            display: "flex",
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '8px'
-        }}>
-            {signedInUserBookings.map((booking) => (
-                <div key={booking.id} style={{ border: '1px solid black', borderRadius: '4px', padding: '8px' }}>
-                    <div>Hotel: {booking?.hotel?.name}</div>
-                    <div>Room: {booking?.room?.type}</div>
-                    <div>Payment Method: {booking.paymentMethod}</div>
-                    <div>Amount: $ {booking.amount}</div>
-                    <button style={{ background: 'red', color: 'white' }} onClick={()=>cancelBooking(booking)}>Cancel Booking</button>
-                </div>
-            ))}
+        <div className="management-dashboard">
+            <h1 className="bookings-header">Management Dashboard: Bookings</h1>
+            <div className="bookings-list">
+                {signedInUserBookings.map((booking) => (
+                    <div key={booking.id} className="booking-item">
+                        <div>Hotel: {booking?.hotel?.name}</div>
+                        <div>Room: {booking?.room?.type}</div>
+                        <div>Payment Method: {booking.paymentMethod}</div>
+                        <div>Amount: $ {booking.amount}</div>
+                        <button className="cancel-button" onClick={() => cancelBooking(booking)}>Cancel Booking</button>
+                    </div>
+                ))}
+            </div>
         </div>
-    )
-}
+    );
+};
