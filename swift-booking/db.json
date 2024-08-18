@@ -337,5 +337,39 @@
       "discountPercentage": 30,
       "validTill": "2024-12-31"
     }
+  ],
+  "payments": [
+    {
+      "id": "7e61",
+      "amount": 9100,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "456789",
+      "cardNumber": "",
+      "cardHolderName": ""
+    },
+    {
+      "id": "73e9",
+      "amount": 9100,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "456789",
+      "cardNumber": "",
+      "cardHolderName": ""
+    },
+    {
+      "id": "abe3",
+      "amount": 9100,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "456789",
+      "cardNumber": "",
+      "cardHolderName": ""
+    },
+    {
+      "id": "8a78",
+      "amount": 4875,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "23453",
+      "cardNumber": "",
+      "cardHolderName": ""
+    }
   ]
 }

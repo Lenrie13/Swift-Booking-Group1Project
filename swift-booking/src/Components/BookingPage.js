@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import BookingForm from './BookingForm';
 import "./BookingPage.css"
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const BookingPage = ({ setBookingData }) => {
     const [rooms, setRooms] = useState([]);
     const [roomPrices, setRoomPrices] = useState({});
-    const [selectedHotelId, setSelectedHotelId] = useState(null);
+    const [selectedHotel, setSelectedHotel] = useState();
     const [hotels, setHotels] = useState([]);
     const [deals, setDeals] = useState([]);
     const [amountPayable, setAmountPayable] = useState(0);
@@ -15,6 +15,11 @@ const BookingPage = ({ setBookingData }) => {
     const location = useLocation();
 
     const { arrivalDate, departureDate, numberOfNights, guests } = location.state || {};
+
+    const onSelectHotel=(e)=>{
+        const hotel = hotels.find((hotel)=>hotel.id === e.target.value);
+        setSelectedHotel(hotel);
+    }
 
     useEffect(() => {
         fetch('http://localhost:3000/hotels')
@@ -31,8 +36,8 @@ const BookingPage = ({ setBookingData }) => {
     }, []);
 
     useEffect(() => {
-        if (selectedHotelId) {
-            fetch(`http://localhost:3000/hotels/${selectedHotelId}`)
+        if (selectedHotel) {
+            fetch(`http://localhost:3000/hotels/${selectedHotel.id}`)
                 .then(response => response.json())
                 .then(data => {
                     setRooms(data.rooms);
@@ -42,16 +47,16 @@ const BookingPage = ({ setBookingData }) => {
                     }, {});
                     setRoomPrices(prices);
 
-                    const applicableDeals = deals.filter(deal => deal.hotelId === selectedHotelId);
+                    const applicableDeals = deals.filter(deal => deal.hotelId === selectedHotel.id);
                     setHotelDeals(applicableDeals);
                 })
                 .catch(error => console.error('Error fetching hotel data:', error));
         }
-    }, [selectedHotelId, deals]);
+    }, [selectedHotel, deals]);
 
     const handleBookingSubmit = (data) => {
         setBookingData(data);
-        navigate('/payment');
+        navigate('/payment',{state:{totalCost:data?.totalCost}});
     };
 
     const calculateAmountPayable = (roomType, guests) => {
@@ -77,7 +82,7 @@ const BookingPage = ({ setBookingData }) => {
             <h1>Booking Form</h1> {/* Moved title to the top */}
             
             <h2>Select a Hotel</h2>
-            <select onChange={(e) => setSelectedHotelId(parseInt(e.target.value))} value={selectedHotelId}>
+            <select onChange={onSelectHotel} value={selectedHotel?.name??''}>
                 <option value="" disabled>Select a hotel</option>
                 {hotels.map(hotel => (
                     <option key={hotel.id} value={hotel.id}>
@@ -86,7 +91,7 @@ const BookingPage = ({ setBookingData }) => {
                 ))}
             </select>
 
-            {selectedHotelId && (
+            {selectedHotel && (
                 <>
                     <BookingForm 
                         onSubmit={handleBookingSubmit}
@@ -96,8 +101,10 @@ const BookingPage = ({ setBookingData }) => {
                         setAmountPayable={setAmountPayable}
                         initialArrivalDate={arrivalDate}
                         initialDepartureDate={departureDate}
-                        initialGuests={guests}
+                        numberOfGuests={guests}
                         numberOfNights={numberOfNights}
+                        selectedHotel={selectedHotel}
+                        deals={deals}
                     />
                 </>
             )}
