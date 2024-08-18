@@ -67,7 +67,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
     <div className="booking-form">
       <h2>Booking Details</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="arrivalDate">Arrival Date:</label>
           <input
             type="text"
@@ -76,7 +76,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             readOnly
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="departureDate">Departure Date:</label>
           <input
             type="text"
@@ -85,7 +85,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             readOnly
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="guests">Number of Guests:</label>
           <input
             type="text"
@@ -94,7 +94,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             readOnly
           />
         </div>
-        <div className="form-group">
+        <div className="fbooking-form-group">
           <label htmlFor="numberOfNights">Number of Nights:</label>
           <input
             type="text"
@@ -103,7 +103,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             readOnly
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="name">Name:</label>
           <input
             type="text"
@@ -115,7 +115,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="age">Age:</label>
           <input
             type="text"
@@ -127,7 +127,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="address">Address:</label>
           <input
             type="text"
@@ -139,7 +139,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="idNumber">ID Number:</label>
           <input
             type="text"
@@ -151,7 +151,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -163,7 +163,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="phoneNumber">Phone Number:</label>
           <input
             type="text"
@@ -175,7 +175,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="roomType">Room Type:</label>
           <select
             id="roomType"
@@ -191,7 +191,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             <option value="luxury">Luxury Suite</option>
           </select>
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="additionalServices">Additional Services:</label>
           <input
             type="text"
@@ -202,7 +202,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             placeholder="Additional Services"
           />
         </div>
-        <div className="form-group">
+        <div className="booking-form-group">
           <label htmlFor="totalCost">Total Cost:</label>
           <input
             type="text"
@@ -212,7 +212,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             readOnly
           />
         </div>
-        <button type="submit">Confirm Booking</button>
+        <button id="confirm-booking-button" type="submit">Confirm Booking</button>
       </form>
     </div>
   );

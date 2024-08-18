@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BookingForm from './BookingForm';
+import "./BookingPage.css"
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const BookingPage = ({ setBookingData }) => {
@@ -72,7 +73,7 @@ const BookingPage = ({ setBookingData }) => {
         return totalAmount;
     };
     return (
-        <div>
+        <div className='booking-page-form'>
             <h1>Booking Form</h1> {/* Moved title to the top */}
             
             <h2>Select a Hotel</h2>
@@ -87,7 +88,6 @@ const BookingPage = ({ setBookingData }) => {
 
             {selectedHotelId && (
                 <>
-                    <h2>Book a Room</h2>
                     <BookingForm 
                         onSubmit={handleBookingSubmit}
                         rooms={rooms}
