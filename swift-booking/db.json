@@ -1,304 +1,341 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "lenrie13",
-        "email": "lenrie@gmail.com",
-        "password": "hhhdhdhdh",
-        "profile": {
-          "firstName": "Lenrie",
-          "lastName": "Ogot",
-          "phoneNumber": "0713658922",
-          "address": "Ruaka, Kiambu"
-        }
+  "users": [
+    {
+      "id": "1",
+      "username": "lenrie13",
+      "email": "lenrie@gmail.com",
+      "password": "hhhdhdhdh",
+      "profile": {
+        "firstName": "Lenrie",
+        "lastName": "Ogot",
+        "phoneNumber": "0713658922",
+        "address": "Ruaka, Kiambu"
+      }
+    },
+    {
+      "id": "1",
+      "username": "novah23",
+      "email": "novah@gmail.com",
+      "password": "hhhdhdhdh",
+      "profile": {
+        "firstName": "Novah",
+        "lastName": "Ogutu",
+        "phoneNumber": "0713661322",
+        "address": "Ruaka, Kiambu"
+      }
+    },
+    {
+      "id": 3,
+      "username": "elly",
+      "email": "elly@gmail.com",
+      "password": "1234",
+      "profile": {
+        "firstName": "Elly",
+        "lastName": "Adam",
+        "phoneNumber": "33333",
+        "address": "ruaka"
+      }
+    }
+  ],
+  "hotels": [
+    {
+      "id": "1",
+      "name": "Neptune Beach Resort",
+      "location": "Diani",
+      "description": "A luxurious stay in the coastal region",
+      "amenities": [
+        "Free Wi-Fi",
+        "Swimming Pool",
+        "Gym",
+        "Beach",
+        "Spa"
+      ],
+      "pricing": {
+        "currency": "USD"
       },
-      {
-        "id": 1,
-        "username": "novah23",
-        "email": "novah@gmail.com",
-        "password": "hhhdhdhdh",
-        "profile": {
-          "firstName": "Novah",
-          "lastName": "Ogutu",
-          "phoneNumber": "0713661322",
-          "address": "Ruaka, Kiambu"
-      }
-      }
-    ],
-    "hotels": [
-      {
-        "id": 1,
-        "name": "Neptune Beach Resort",
-        "location": "Diani",
-        "description": "A luxurious stay in the coastal region",
-        "amenities": ["Free Wi-Fi", "Swimming Pool", "Gym", "Beach", "Spa"],
-        "pricing": {
-          "currency": "USD"
-        },
-        "gallery": [
-          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery1.jpeg",
-          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery2.jpg",
-          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery3.jpg",
-          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery4.jpg",
-          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery5.jpg",
-          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery6.jpeg",
-          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery7.jpeg",
-          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery8.jpeg"
-        ],
-        "rooms": [
-          {
-            "id": 1,
-            "type": "Single Room",
-            "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/single.jpg",
-            "description": "A cozy room with all basic amenities.",
-            "pricePerNight": 150,
-            "available": true
-          },
-          {
-            "id": 2,
-            "type": "Double Room",
-            "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/double.jpeg",
-            "description": "A spacious twin bed room with a city view.",
-            "pricePerNight": 250,
-            "available": true
-          },
-          {
-            "id": 3,
-            "type": "Deluxe Room",
-            "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/deluxe.jpeg",
-            "description": "A luxurious room with a separate living area.",
-            "pricePerNight": 400,
-            "available": true
-          },
-          {
-            "id": 4,
-            "type": "Luxury Suite",
-            "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/luxury.jpeg",
-            "description": "An exclusive beachfront penthouse with top-notch amenities.",
-            "pricePerNight": 800,
-            "available": true
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "PrideInn Beach Resort",
-        "location": "Diani",
-        "description": "Experience the best ocean views in Diani.",
-        "amenities": ["Beach Access", "Free Breakfast", "Infinity Pool", "Gym", "Open Sea Aquarium", "Spa"],
-        "pricing": {
-          "currency": "USD"
-        },
-        "gallery": [
-          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery1.jpeg",
-          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery2.jpeg",
-          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery3.jpeg",
-          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery4.jpeg",
-          "Gassets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery5.jpeg",
-          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery6.jpeg",
-          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery7.jpeg",
-          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery8.jpeg"
-        ],
-        "rooms": [
-          {
-            "id": 1,
-            "type": "Single Room",
-            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/single-room.jpeg",
-            "description": "A room with a garden view.",
-            "pricePerNight": 200,
-            "available": true
-          },
-          {
-            "id": 2,
-            "type": "Double Room",
-            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/double-rooms.jpeg",
-            "description": "A spacious room with a pool view.",
-            "pricePerNight": 350,
-            "available": true
-          },
-          {
-            "id": 3,
-            "type": "Deluxe Room",
-            "description": "A suite with a panoramic ocean view.",
-            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/deluxe-rooms.jpeg",
-            "pricePerNight": 450,
-            "available": true
-          },
-          {
-            "id": 4,
-            "type": "Luxury Suite",
-            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/luxury-room1.jpeg",
-            "description": "A private villa with direct beach access.",
-            "pricePerNight": 850,
-            "available": true
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Sarova WhiteSands Hotel",
-        "location": "Diani",
-        "description": "A peaceful retreat along the beach.",
-        "amenities": ["Ski Access", "Hot Tub", "Fireplace", "Clean Beaches"],
-        "pricing": {
-          "currency": "USD"
-        },
-        "gallery": [
-          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery1.jpeg",
-          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery2.jpeg",
-          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery3.jpeg",
-          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery4.jpeg",
-          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery5.jpeg",
-          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery6.jpeg",
-          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery7.jpeg",
-          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery8.jpeg"
-        ],
-        "rooms": [
-          {
-            "id": 1,
-            "type": "Single Room",
-            "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/single-rooms.jpeg",
-            "description": "A room with a serene pool view.",
-            "pricePerNight": 200,
-            "available": true
-          },
-          {
-            "id": 2,
-            "type": "Double Room",
-            "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/double-rooms.jpeg",
-            "description": "A twin bed room with a garden-facing balcony.",
-            "pricePerNight": 300,
-            "available": true
-          },
-          {
-            "id": 3,
-            "type": "Deluxe Room",
-            "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/deluxe-rooms.jpeg",
-            "description": "A large spacious room with a cozy fireplace.",
-            "pricePerNight": 450,
-            "available": true
-          },
-          {
-            "id": 4,
-            "type": "Luxury Suite",
-            "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/luxury-room.jpeg",
-            "description": "A private suite with elegant handmade furniture and beach access.",
-            "pricePerNight": 1050,
-            "available": true
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Voyager Beach Resort",
-        "location": "Mombasa",
-        "description": "A modern hotel in the bustling city of Mombasa.",
-        "amenities": ["Free Wi-Fi", "Rooftop Bar", "24/7 Gym", "Beach Access", "Restaurant"],
-        "pricing": {
-          "currency": "USD"
-        },
-        "gallery": [
-          "iassets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery1.jpg",
-          "iassets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery2.avif",
-          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery3.jpg",
-          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery4.jpg",
-          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery5.jpg",
-          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery6.jpg",
-          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery7.jpg",
-          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery8.jpeg"
-        ],
-        "rooms": [
-          {
-            "id": 1,
-            "type": "Single Room",
-            "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/single-rooms.jpeg",
-            "description": "A comfortable room with city views.",
-            "pricePerNight": 200,
-            "available": true
-          },
-          {
-            "id": 2,
-            "type": "Double Room",
-            "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/double-rooms.jpeg",
-            "description": "A relaxing cozy room with a skyline view.",
-            "pricePerNight": 280,
-            "available": true
-          },
-          {
-            "id": 3,
-            "type": "Deluxe Room",
-            "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/deluxe-rooms.jpg",
-            "description": "A spacious memorable room with a separate living area.",
-            "pricePerNight": 500,
-            "available": true
-          },
-          {
-            "id": 4,
-            "type": "Luxury Suite",
-            "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/luxury-rooms.jpg",
-            "description": "The most sophisticated beachfront suite with private bar.",
-            "pricePerNight": 1000,
-            "available": true
-          }
-        ]
-      }
-    ],
-    "bookings": [
-      {
-        "id": 1,
-        "userId": 1,
-        "hotelId": 1,
-        "roomId": 2,
-        "checkIn": "2024-08-15",
-        "checkOut": "2024-08-20",
-        "totalPrice": 1250,
-        "status": "confirmed",
-        "services": ["Airport Transfer", "Breakfast"]
-      }
-    ],
-    "reviews": [
-      {
-        "id": 1,
-        "userId": 1,
-        "hotelId": 1,
-        "rating": 5,
-        "comment": "Amazing experience! Clean spaces and the staff was very helpful."
-      }
-    ],
-      "deals": [
+      "gallery": [
+        "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery1.jpeg",
+        "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery2.jpg",
+        "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery3.jpg",
+        "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery4.jpg",
+        "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery5.jpg",
+        "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery6.jpeg",
+        "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery7.jpeg",
+        "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery8.jpeg"
+      ],
+      "rooms": [
         {
           "id": 1,
-          "hotelId": 1,
-          "title": "Neptune Beach Resort Summer Sale",
-          "description": "Enjoy a 25% discount on your stay at Neptune Beach Resort for the summer season!",
-          "discountPercentage": 25,
-          "validTill": "2024-09-30"
+          "type": "Single Room",
+          "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/single.jpg",
+          "description": "A cozy room with all basic amenities.",
+          "pricePerNight": 150,
+          "available": true
         },
         {
           "id": 2,
-          "hotelId": 2,
-          "title": "Pride Inn Beach Resort Weekend Special",
-          "description": "Get 15% off on weekend stays at Pride Inn Beach Resort!",
-          "discountPercentage": 15,
-          "validTill": "2024-08-31"
+          "type": "Double Room",
+          "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/double.jpeg",
+          "description": "A spacious twin bed room with a city view.",
+          "pricePerNight": 250,
+          "available": true
         },
         {
           "id": 3,
-          "hotelId": 3,
-          "title": "Sarova White Sands Early Bird Discount",
-          "description": "Book early and save 20% on your stay at Sarova White Sands.",
-          "discountPercentage": 20,
-          "validTill": "2024-10-15"
+          "type": "Deluxe Room",
+          "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/deluxe.jpeg",
+          "description": "A luxurious room with a separate living area.",
+          "pricePerNight": 400,
+          "available": true
         },
         {
           "id": 4,
-          "hotelId": 4,
-          "title": "Voyager Beach Resort Family Package",
-          "description": "Save 30% on family bookings at Voyager Beach Resort. Perfect for a family vacation!",
-          "discountPercentage": 30,
-          "validTill": "2024-12-31"
+          "type": "Luxury Suite",
+          "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/luxury.jpeg",
+          "description": "An exclusive beachfront penthouse with top-notch amenities.",
+          "pricePerNight": 800,
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "PrideInn Beach Resort",
+      "location": "Diani",
+      "description": "Experience the best ocean views in Diani.",
+      "amenities": [
+        "Beach Access",
+        "Free Breakfast",
+        "Infinity Pool",
+        "Gym",
+        "Open Sea Aquarium",
+        "Spa"
+      ],
+      "pricing": {
+        "currency": "USD"
+      },
+      "gallery": [
+        "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery1.jpeg",
+        "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery2.jpeg",
+        "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery3.jpeg",
+        "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery4.jpeg",
+        "Gassets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery5.jpeg",
+        "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery6.jpeg",
+        "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery7.jpeg",
+        "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery8.jpeg"
+      ],
+      "rooms": [
+        {
+          "id": 1,
+          "type": "Single Room",
+          "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/single-room.jpeg",
+          "description": "A room with a garden view.",
+          "pricePerNight": 200,
+          "available": true
+        },
+        {
+          "id": 2,
+          "type": "Double Room",
+          "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/double-rooms.jpeg",
+          "description": "A spacious room with a pool view.",
+          "pricePerNight": 350,
+          "available": true
+        },
+        {
+          "id": 3,
+          "type": "Deluxe Room",
+          "description": "A suite with a panoramic ocean view.",
+          "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/deluxe-rooms.jpeg",
+          "pricePerNight": 450,
+          "available": true
+        },
+        {
+          "id": 4,
+          "type": "Luxury Suite",
+          "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/luxury-room1.jpeg",
+          "description": "A private villa with direct beach access.",
+          "pricePerNight": 850,
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Sarova WhiteSands Hotel",
+      "location": "Diani",
+      "description": "A peaceful retreat along the beach.",
+      "amenities": [
+        "Ski Access",
+        "Hot Tub",
+        "Fireplace",
+        "Clean Beaches"
+      ],
+      "pricing": {
+        "currency": "USD"
+      },
+      "gallery": [
+        "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery1.jpeg",
+        "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery2.jpeg",
+        "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery3.jpeg",
+        "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery4.jpeg",
+        "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery5.jpeg",
+        "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery6.jpeg",
+        "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery7.jpeg",
+        "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery8.jpeg"
+      ],
+      "rooms": [
+        {
+          "id": 1,
+          "type": "Single Room",
+          "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/single-rooms.jpeg",
+          "description": "A room with a serene pool view.",
+          "pricePerNight": 200,
+          "available": true
+        },
+        {
+          "id": 2,
+          "type": "Double Room",
+          "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/double-rooms.jpeg",
+          "description": "A twin bed room with a garden-facing balcony.",
+          "pricePerNight": 300,
+          "available": true
+        },
+        {
+          "id": 3,
+          "type": "Deluxe Room",
+          "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/deluxe-rooms.jpeg",
+          "description": "A large spacious room with a cozy fireplace.",
+          "pricePerNight": 450,
+          "available": true
+        },
+        {
+          "id": 4,
+          "type": "Luxury Suite",
+          "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/luxury-room.jpeg",
+          "description": "A private suite with elegant handmade furniture and beach access.",
+          "pricePerNight": 1050,
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Voyager Beach Resort",
+      "location": "Mombasa",
+      "description": "A modern hotel in the bustling city of Mombasa.",
+      "amenities": [
+        "Free Wi-Fi",
+        "Rooftop Bar",
+        "24/7 Gym",
+        "Beach Access",
+        "Restaurant"
+      ],
+      "pricing": {
+        "currency": "USD"
+      },
+      "gallery": [
+        "iassets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery1.jpg",
+        "iassets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery2.avif",
+        "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery3.jpg",
+        "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery4.jpg",
+        "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery5.jpg",
+        "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery6.jpg",
+        "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery7.jpg",
+        "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery8.jpeg"
+      ],
+      "rooms": [
+        {
+          "id": 1,
+          "type": "Single Room",
+          "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/single-rooms.jpeg",
+          "description": "A comfortable room with city views.",
+          "pricePerNight": 200,
+          "available": true
+        },
+        {
+          "id": 2,
+          "type": "Double Room",
+          "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/double-rooms.jpeg",
+          "description": "A relaxing cozy room with a skyline view.",
+          "pricePerNight": 280,
+          "available": true
+        },
+        {
+          "id": 3,
+          "type": "Deluxe Room",
+          "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/deluxe-rooms.jpg",
+          "description": "A spacious memorable room with a separate living area.",
+          "pricePerNight": 500,
+          "available": true
+        },
+        {
+          "id": 4,
+          "type": "Luxury Suite",
+          "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/luxury-rooms.jpg",
+          "description": "The most sophisticated beachfront suite with private bar.",
+          "pricePerNight": 1000,
+          "available": true
         }
       ]
     }
-    
-  
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "userId": 1,
+      "hotelId": 1,
+      "roomId": 2,
+      "checkIn": "2024-08-15",
+      "checkOut": "2024-08-20",
+      "totalPrice": 1250,
+      "status": "confirmed",
+      "services": [
+        "Airport Transfer",
+        "Breakfast"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "userId": 1,
+      "hotelId": 1,
+      "rating": 5,
+      "comment": "Amazing experience! Clean spaces and the staff was very helpful."
+    }
+  ],
+  "deals": [
+    {
+      "id": "1",
+      "hotelId": 1,
+      "title": "Neptune Beach Resort Summer Sale",
+      "description": "Enjoy a 25% discount on your stay at Neptune Beach Resort for the summer season!",
+      "discountPercentage": 25,
+      "validTill": "2024-09-30"
+    },
+    {
+      "id": "2",
+      "hotelId": 2,
+      "title": "Pride Inn Beach Resort Weekend Special",
+      "description": "Get 15% off on weekend stays at Pride Inn Beach Resort!",
+      "discountPercentage": 15,
+      "validTill": "2024-08-31"
+    },
+    {
+      "id": "3",
+      "hotelId": 3,
+      "title": "Sarova White Sands Early Bird Discount",
+      "description": "Book early and save 20% on your stay at Sarova White Sands.",
+      "discountPercentage": 20,
+      "validTill": "2024-10-15"
+    },
+    {
+      "id": "4",
+      "hotelId": 4,
+      "title": "Voyager Beach Resort Family Package",
+      "description": "Save 30% on family bookings at Voyager Beach Resort. Perfect for a family vacation!",
+      "discountPercentage": 30,
+      "validTill": "2024-12-31"
+    }
+  ]
+}

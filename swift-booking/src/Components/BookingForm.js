@@ -132,8 +132,11 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
           <input
             type="text"
             id="address"
-            value={address || ''}
-            readOnly
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            placeholder="Address"
+            required
           />
         </div>
         <div className="form-group">
