@@ -121,20 +121,22 @@
 
 /* Styling for the sign out button */
 .sign-out-button {
-    margin-top: 20px; 
+    margin-top: 30px; 
     padding: 10px 20px; 
     font-size: 16px; 
     font-weight: bold; 
     color: #fff; 
-    background-color: #F5004F; 
+    background-color: #FF0000; 
     border: none; 
     border-radius: 5px; 
+    margin-left: 5px;
+    margin-bottom: 10px;
     cursor: pointer; 
     transition: background-color 0.3s; 
 }
 
 .sign-out-button:hover {
-    background-color: #c9302c; /* Darker red when hovering */
+    background-color: #C80036; /* Darker red when hovering */
 }
 .date-picker-container {
     display: flex;

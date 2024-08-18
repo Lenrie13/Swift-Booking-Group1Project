@@ -74,3 +74,10 @@ button {
 .sign-up-button:hover {
     background-color: #2c9b4b;
 }
+.toggle-button{
+    background-color: #059212;
+    color: white;
+}
+.toggle-button:hover{
+    background-color: #399918;
+}
