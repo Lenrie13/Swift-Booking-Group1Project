@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { addDays } from 'date-fns';
 import './LandingPageBody.css';
 import Deals from './Deals';
+import ContactInfo from './ContactInfo';
+import AboutUs from './AboutUs';
 
 function LandingPageBody({ setIsAuthenticated }) {
   const navigate = useNavigate();
@@ -15,7 +17,8 @@ function LandingPageBody({ setIsAuthenticated }) {
   const [selectedRoom, setSelectedRoom] = useState('');
   const [hotels, setHotels] = useState([]);
   const [showBookingForm, setShowBookingForm] = useState(false);
-  const [showGuestsInput, setShowGuestsInput] = useState(false); // State for toggling input visibility
+  const [showContactInfo, setShowContactInfo] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
 
   // Placeholder for additional user details
   const [name, setName] = useState('');
@@ -44,24 +47,33 @@ function LandingPageBody({ setIsAuthenticated }) {
     const departure = new Date(departureDate);
     const differenceInTime = departure.getTime() - arrival.getTime();
     return differenceInTime / (1000 * 3600 * 24); // Converts time difference from milliseconds to days
-};
+  };
 
   const handleBookNowClick = () => {
     if (arrivalDate && departureDate && guests) {
-        const numberOfNights = calculateNumberOfNights(arrivalDate, departureDate);
-        navigate('/book-now', { state: { arrivalDate, departureDate, numberOfNights, guests } });
+      const numberOfNights = calculateNumberOfNights(arrivalDate, departureDate);
+      navigate('/book-now', { state: { arrivalDate, departureDate, numberOfNights, guests } });
     } else {
-        alert('Please fill out all required fields.');
+      alert('Please fill out all required fields.');
     }
-};
+  };
 
-const handleGuestsChange = (event) => {
-  const value = parseInt(event.target.value, 10);
-  if (value >= 1) {
+  const handleGuestsChange = (event) => {
+    const value = parseInt(event.target.value, 10);
+    if (value >= 1) {
       setGuests(value);
-  }
-};
-
+    }
+  };
+  const toggleContactInfo = () => {
+    setShowContactInfo(!showContactInfo);
+    setShowAbout(false); 
+  };
+  
+  const toggleAbout = () => {
+    setShowAbout(!showAbout);
+    setShowContactInfo(false); 
+  };
+  
   const handleSignOut = () => {
     setIsAuthenticated(false);
     navigate('/');
@@ -102,17 +114,17 @@ const handleGuestsChange = (event) => {
               />
             </div>
             <div className="guests-container">
-                        <button className="guests-button">
-                            Guests: {guests} <span className="guests-icon">👥</span>
-                        </button>
-                        <input
-                            type="number"
-                            value={guests}
-                            onChange={handleGuestsChange}
-                            className="guests-input"
-                            min="1"
-                        />
-                    </div>
+              <button className="guests-button">
+                Guests: {guests} <span className="guests-icon">👥</span>
+              </button>
+              <input
+                type="number"
+                value={guests}
+                onChange={handleGuestsChange}
+                className="guests-input"
+                min="1"
+              />
+            </div>
             <button className="book-now" onClick={handleBookNowClick}>BOOK NOW!</button>
           </div>
         )}
@@ -252,27 +264,34 @@ const handleGuestsChange = (event) => {
                   readOnly
                 />
               </div>
-              <button className='booking-form-submit-button' onSubmit type="submit">Confirm Booking</button>
+              <button className="booking-form-submit-button" type="submit">Confirm Booking</button>
             </form>
           </div>
         )}
       </div>
       <Deals />
 
-      <div className="aboutUs">
-        <h1>SWIFT BOOKING</h1>
-        <div className="description">
-          <h2>ABOUT US</h2>
-          <p>
-            At Swift Booking, we enlist only the best hotels where you stay once
-            and carry memories forever. We help you see life from a different
-            perspective. Your quest for a refreshing environment to stay, relax,
-            and unwind starts and ends here. This is home away from home!
-          </p>
-        </div>
-      </div>
+      <div className="navigation-links">
+      <button onClick={toggleContactInfo} className="contact-info-link">
+        Contact Info
+      </button>
+      <button onClick={toggleAbout} className="about-us-link">
+        About Us
+      </button>
+    </div>
 
-    
+    {showContactInfo && (
+      <div className="contact-info-section">
+        <ContactInfo />
+      </div>
+    )}
+
+    {showAbout && (
+      <div className="about-us-section">
+        <AboutUs />
+      </div>
+    )}
+      <button className="sign-out-button" onClick={handleSignOut}>Sign Out</button>
     </div>
   );
 }
