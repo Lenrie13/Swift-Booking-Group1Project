@@ -76,7 +76,7 @@ const handleGuestsChange = (event) => {
           className="page-image"
         />
         {!showBookingForm && (
-          <div className="booking-form">
+          <div className="booking-buttons">
             <div className="date-picker-container">
               <DatePicker
                 selected={arrivalDate}
