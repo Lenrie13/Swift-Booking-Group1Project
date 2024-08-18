@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "elly",
       "email": "elly@gmail.com",
       "password": "1234",
@@ -34,6 +34,18 @@
         "lastName": "Adam",
         "phoneNumber": "33333",
         "address": "ruaka"
+      }
+    },
+    {
+      "id": 4,
+      "username": "moemeylane",
+      "email": "tester2@gmail.com",
+      "password": "trying34",
+      "profile": {
+        "firstName": "maureen",
+        "lastName": "kiburu",
+        "phoneNumber": "0798765432",
+        "address": "479 Amani Court"
       }
     }
   ],
