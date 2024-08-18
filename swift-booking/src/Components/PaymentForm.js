@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./PaymentForm.css"
 import { useNavigate } from 'react-router-dom';
 
 function PaymentForm({ bookingData }) {
@@ -53,7 +54,7 @@ function PaymentForm({ bookingData }) {
 
   return (
     <div className="payment-form">
-      <h2>Payment</h2>
+      <h2>Please Make YourPayment</h2>
       <div className="payment-details">
         <p>Amount Payable: ${amount}</p>
         <div className="payment-methods">
@@ -104,7 +105,7 @@ function PaymentForm({ bookingData }) {
             />
           </div>
         )}
-        <button onClick={handlePayment}>Pay Now</button>
+        <button id="pay-now-button" onClick={handlePayment}>Pay Now</button>
       </div>
     </div>
   );

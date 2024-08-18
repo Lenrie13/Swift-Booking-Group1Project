@@ -17,12 +17,12 @@
 /* Styling for the landing page image */
 .page-image {
     width: 100%;
-    height: 500px;
+    height: 650px;
     object-fit: cover;
 }
 
 /* Booking form positioning and styling */
-.booking-form {
+.booking-buttons {
     position: absolute;
     top: 85%; 
     left: 50%; 
