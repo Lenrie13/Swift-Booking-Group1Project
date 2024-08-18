@@ -39,22 +39,28 @@ function LandingPageBody({ setIsAuthenticated }) {
     fetchHotels();
   }, []);
 
-  const calculateNumberOfNights = () => {
-    return departureDate && arrivalDate ? 
-      Math.ceil((departureDate - arrivalDate) / (1000 * 60 * 60 * 24)) : 0;
-  };
+  const calculateNumberOfNights = (arrivalDate, departureDate) => {
+    const arrival = new Date(arrivalDate);
+    const departure = new Date(departureDate);
+    const differenceInTime = departure.getTime() - arrival.getTime();
+    return differenceInTime / (1000 * 3600 * 24); // Converts time difference from milliseconds to days
+};
 
   const handleBookNowClick = () => {
     if (arrivalDate && departureDate && guests) {
-      setShowBookingForm(true);
+        const numberOfNights = calculateNumberOfNights(arrivalDate, departureDate);
+        navigate('/book-now', { state: { arrivalDate, departureDate, numberOfNights, guests } });
     } else {
-      alert('Please fill out all required fields.');
+        alert('Please fill out all required fields.');
     }
-  };
+};
 
-  const handleGuestsButtonClick = () => {
-    setShowGuestsInput(!showGuestsInput); // Toggle visibility
-  };
+const handleGuestsChange = (event) => {
+  const value = parseInt(event.target.value, 10);
+  if (value >= 1) {
+      setGuests(value);
+  }
+};
 
   const handleSignOut = () => {
     setIsAuthenticated(false);
@@ -96,19 +102,17 @@ function LandingPageBody({ setIsAuthenticated }) {
               />
             </div>
             <div className="guests-container">
-              <button className="guests-button" onClick={handleGuestsButtonClick}>
-                {guests} Guests
-              </button>
-              {showGuestsInput && (
-                <input
-                  type="number"
-                  min="1"
-                  value={guests}
-                  onChange={(e) => setGuests(Number(e.target.value))}
-                  className="guests-input"
-                />
-              )}
-            </div>
+                        <button className="guests-button">
+                            Guests: {guests} <span className="guests-icon">👥</span>
+                        </button>
+                        <input
+                            type="number"
+                            value={guests}
+                            onChange={handleGuestsChange}
+                            className="guests-input"
+                            min="1"
+                        />
+                    </div>
             <button className="book-now" onClick={handleBookNowClick}>BOOK NOW!</button>
           </div>
         )}

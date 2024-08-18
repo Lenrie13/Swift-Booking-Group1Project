@@ -28,11 +28,14 @@ function App() {
               )
             }
           />
-          <Route path="/book-now" element={<BookingPage />} />
+          <Route path="/book-now" element={<BookingPage setBookingData={setBookingData} />} />
+
           {bookingData && (
             <Route path="/payment" element={<PaymentForm bookingData={bookingData} />} />
           )}
+
           <Route path="/hotel/:id" element={<HotelDetails />} />
+
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
