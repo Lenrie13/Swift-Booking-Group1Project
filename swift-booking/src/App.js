@@ -29,14 +29,12 @@ function App() {
           />
           <Route
             path="/book-now"
-            element={<BookingPage />}
+            element={<BookingPage setBookingData={setBookingData} />}
           />
-          {bookingData && (
-            <Route
-              path="/payment"
-              element={<PaymentForm bookingData={bookingData} />}
-            />
-          )}
+          <Route
+            path="/payment"
+            element={bookingData ? <PaymentForm bookingData={bookingData} /> : <Navigate to="/" />}
+          />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
