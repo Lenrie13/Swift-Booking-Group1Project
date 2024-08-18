@@ -5,6 +5,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { addDays } from 'date-fns';
 import './LandingPageBody.css';
 import Deals from './Deals';
+import ContactInfo from './ContactInfo';
+import AboutUs from './AboutUs';
 
 function LandingPageBody({ setIsAuthenticated }) {
   const navigate = useNavigate();
@@ -15,7 +17,9 @@ function LandingPageBody({ setIsAuthenticated }) {
   const [selectedRoom, setSelectedRoom] = useState('');
   const [hotels, setHotels] = useState([]);
   const [showBookingForm, setShowBookingForm] = useState(false);
-  const [showGuestsInput, setShowGuestsInput] = useState(false); // State for toggling input visibility
+  const [showGuestsInput, setShowGuestsInput] = useState(false);
+  const [showContactInfo, setShowContactInfo] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
 
   // Placeholder for additional user details
   const [name, setName] = useState('');
@@ -52,8 +56,71 @@ function LandingPageBody({ setIsAuthenticated }) {
     }
   };
 
+  const handleContactClick = () => {
+    setShowContactInfo(!showContactInfo);
+  };
+
+  const handleAboutClick = () => {
+    setShowAbout(!showAbout);
+  };
+
   const handleGuestsButtonClick = () => {
-    setShowGuestsInput(!showGuestsInput); // Toggle visibility
+    setShowGuestsInput(!showGuestsInput);
+  };
+
+  const handleConfirmBooking = async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    
+    const bookingData = {
+      arrivalDate,
+      departureDate,
+      guests,
+      selectedHotel,
+      selectedRoom,
+      name,
+      age,
+      address,
+      idNumber,
+      email,
+      phoneNumber,
+      amountPayable: selectedHotel && selectedRoom
+        ? `${
+            (hotels.find(hotel => hotel.id === selectedHotel)?.rooms.find(room => room.type === selectedRoom)?.price || 0) * calculateNumberOfNights() * guests
+          }`
+        : 'Please select hotel and room type'
+    };
+  
+    try {
+      // Post booking data to the server
+      await fetch('http://localhost:3000/bookings', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
+  
+      // Clear form fields after successful booking
+      setArrivalDate(null);
+      setDepartureDate(null);
+      setGuests(1);
+      setSelectedHotel('');
+      setSelectedRoom('');
+      setName('');
+      setAge('');
+      setAddress('');
+      setIdNumber('');
+      setEmail('');
+      setPhoneNumber('');
+  
+      // Optionally hide the booking form
+      setShowBookingForm(false);
+  
+      alert('Booking confirmed successfully!');
+    } catch (error) {
+      console.error('Error confirming booking:', error);
+      alert('There was an error confirming your booking. Please try again.');
+    }
   };
 
   const handleSignOut = () => {
@@ -227,7 +294,7 @@ function LandingPageBody({ setIsAuthenticated }) {
               <div className="form-group">
                 <label htmlFor="phoneNumber">Phone Number:</label>
                 <input
-                  type="tel"
+                  type="text"
                   id="phoneNumber"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
@@ -238,37 +305,27 @@ function LandingPageBody({ setIsAuthenticated }) {
                 <input
                   type="text"
                   id="amountPayable"
-                  value={
-                    selectedHotel && selectedRoom
-                      ? `${
-                          (hotels.find(hotel => hotel.id === selectedHotel)?.rooms.find(room => room.type === selectedRoom)?.price || 0) * calculateNumberOfNights() * guests
-                        }`
-                      : 'Please select hotel and room type'
-                  }
+                  value={selectedHotel && selectedRoom
+                    ? `${
+                        (hotels.find(hotel => hotel.id === selectedHotel)?.rooms.find(room => room.type === selectedRoom)?.price || 0) * calculateNumberOfNights() * guests
+                      }`
+                    : 'Please select hotel and room type'}
                   readOnly
                 />
               </div>
-              <button className='booking-form-submit-button' onSubmit type="submit">Confirm Booking</button>
+              <button onClick={handleConfirmBooking}>Confirm Booking</button>
             </form>
           </div>
         )}
+        <button className="contact-button" onClick={handleContactClick}>
+          {showContactInfo ? 'Hide Contact Info' : 'Show Contact Info'}
+        </button>
+        {showContactInfo && <ContactInfo />}
+        <button className="about-button" onClick={handleAboutClick}>
+          {showAbout ? 'Hide About Us' : 'Show About Us'}
+        </button>
+        {showAbout && <AboutUs />}
       </div>
-      <Deals />
-
-      <div className="aboutUs">
-        <h1>SWIFT BOOKING</h1>
-        <div className="description">
-          <h2>ABOUT US</h2>
-          <p>
-            At Swift Booking, we enlist only the best hotels where you stay once
-            and carry memories forever. We help you see life from a different
-            perspective. Your quest for a refreshing environment to stay, relax,
-            and unwind starts and ends here. This is home away from home!
-          </p>
-        </div>
-      </div>
-
-    
     </div>
   );
 }

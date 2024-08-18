@@ -5,8 +5,8 @@ const Deals = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/deals') // Adjust the URL if needed
-      .then((response) => response.json())
+    fetch('http://localhost:3000/deals') 
+          .then((response) => response.json())
       .then((data) => setDeals(data))
       .catch((error) => console.error('Error fetching deals:', error));
   }, []);
