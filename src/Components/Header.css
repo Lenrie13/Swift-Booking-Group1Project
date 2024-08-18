@@ -1,0 +1,106 @@
+.header {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.top-header-elements-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    width: 150px;
+    
+}
+
+.app-name h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.sign-out {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #333;
+}
+
+.nav-button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.hotel-list {
+    padding: 20px;
+}
+
+.hotel-item {
+    margin-bottom: 30px;
+}
+
+.hotel-gallery {
+    margin-top: 20px;
+}
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-image {
+    margin: 10px;
+    width: 200px;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.hotel-rooms {
+    margin-top: 20px;
+}
+
+.room-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.room-image {
+    margin: 10px;
+    width: 200px;
+}
+
+.room-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}

@@ -1,0 +1,41 @@
+.rooms-page {
+    padding: 20px;
+  }
+  
+  .hotel-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .hotel-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+  }
+  
+  .hotel-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .hotel-details {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .room-card {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .room-image {
+    width: 100%;
+    height: auto;
+  }
+  
