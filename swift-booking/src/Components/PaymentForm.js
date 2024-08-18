@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./PaymentForm.css"
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function PaymentForm({ bookingData }) {
   const navigate = useNavigate();
@@ -9,6 +9,8 @@ function PaymentForm({ bookingData }) {
   const [cardNumber, setCardNumber] = useState('');
   const [cardHolderName, setCardHolderName] = useState('');
   const [amount] = useState(bookingData.numberOfNights * 100); // Example amount calculation
+  const location = useLocation();
+  const {totalCost} = location.state??{}
 
   const handlePayment = async () => {
     // Basic validation
@@ -24,13 +26,13 @@ function PaymentForm({ bookingData }) {
     // Simulate a payment request
     try {
       // Payment API request simulation
-      const paymentResponse = await fetch('http://localhost:3000/payment', {
+      const paymentResponse = await fetch('http://localhost:3000/payments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount,
+          amount:totalCost,
           paymentMethod,
           mpesaNumber,
           cardNumber,
@@ -38,9 +40,7 @@ function PaymentForm({ bookingData }) {
         }),
       });
 
-      const result = await paymentResponse.json();
-
-      if (result.success) {
+      if (paymentResponse.ok) {
         alert('Payment successful!');
         navigate('/booking-confirmation', { state: { bookingData } });
       } else {
@@ -54,9 +54,9 @@ function PaymentForm({ bookingData }) {
 
   return (
     <div className="payment-form">
-      <h2>Please Make YourPayment</h2>
+      <h2>Please Make Your Payment</h2>
       <div className="payment-details">
-        <p>Amount Payable: ${amount}</p>
+        <p>Amount Payable: ${totalCost}</p>
         <div className="payment-methods">
           <label>
             <input

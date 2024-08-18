@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './BookingForm.css';
 
-const BookingForm = ({ onSubmit, deals = [] }) => {
+const BookingForm = (props) => {
+  const {onSubmit, deals = [],  selectedHotel, numberOfGuests} = props;
+  const [selectedRoomType, setSelectedRoomType] = useState();
+
   const location = useLocation();
   const {
     arrivalDate,
     departureDate,
-    guests,
     numberOfNights,
     name: locationName,
     age: locationAge,
@@ -28,6 +30,16 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
     totalCost: 0,
   });
 
+  const totalCost = useMemo(() => {
+    const deal = deals?.find((deal) => deal.id === selectedHotel?.id);
+    if (selectedRoomType && numberOfNights && numberOfGuests) {
+      const totalCostWithoutDeal = selectedRoomType?.pricePerNight * numberOfNights * numberOfGuests;
+
+      return deal ? (100 - deal.discountPercentage) / 100 * totalCostWithoutDeal : totalCostWithoutDeal;
+    }
+    return 0;
+  }, [selectedHotel, selectedRoomType, numberOfNights, numberOfGuests, deals]);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -35,29 +47,21 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
     });
   };
 
+
   const handleRoomTypeChange = (e) => {
-    const selectedRoomType = e.target.value;
-  
-    const selectedDeal = deals.length > 0
-      ? deals.find((deal) => deal.roomType === selectedRoomType)
-      : null;
-  
-    const discountedPrice = selectedDeal
-      ? selectedDeal.price - (selectedDeal.price * selectedDeal.discountPercentage / 100)
-      : 0;
-  
-    setFormData({
-      ...formData,
-      roomType: selectedRoomType,
-      totalCost: discountedPrice,
-    });
+    const selectedRoomTypeId = parseInt(e.target.value);
+    const selectedRoomType = selectedHotel?.rooms?.find((room)=>room.id===selectedRoomTypeId);
+    setSelectedRoomType(selectedRoomType);
   };
   
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (typeof onSubmit === 'function') {
-      onSubmit(formData);
+      onSubmit({
+        ...formData,
+        totalCost
+      });
     } else {
       console.error('onSubmit is not a function');
     }
@@ -90,7 +94,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
           <input
             type="text"
             id="guests"
-            value={guests || ''}
+            value={numberOfGuests || ''}
             readOnly
           />
         </div>
@@ -180,15 +184,14 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
           <select
             id="roomType"
             name="roomType"
-            value={formData.roomType}
+            value={selectedRoomType?.id??''}
             onChange={handleRoomTypeChange}
             required
           >
-            <option value="">Select Room Type</option>
-            <option value="single">Single Room</option>
-            <option value="double">Double Room</option>
-            <option value="deluxe">Deluxe Room</option>
-            <option value="luxury">Luxury Suite</option>
+            <option value="" disabled>Select Room Type</option>
+            {selectedHotel?.rooms?.map((room)=>{
+              return  <option value={room.id} key={room.id}>{room?.type}</option>
+            })}
           </select>
         </div>
         <div className="booking-form-group">
@@ -208,7 +211,7 @@ const BookingForm = ({ onSubmit, deals = [] }) => {
             type="text"
             id="totalCost"
             name="totalCost"
-            value={formData.totalCost}
+            value={totalCost}
             readOnly
           />
         </div>
