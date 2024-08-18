@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./PaymentForm.css"
 import { useLocation, useNavigate } from 'react-router-dom';
 
-function PaymentForm({ bookingData }) {
+function PaymentForm({ bookingData,signedInuser }) {
   const navigate = useNavigate();
   const [paymentMethod, setPaymentMethod] = useState('mpesa');
   const [mpesaNumber, setMpesaNumber] = useState('');
@@ -10,7 +10,7 @@ function PaymentForm({ bookingData }) {
   const [cardHolderName, setCardHolderName] = useState('');
   const [amount] = useState(bookingData.numberOfNights * 100); // Example amount calculation
   const location = useLocation();
-  const {totalCost} = location.state??{}
+  const {totalCost, ...restOfPaymentData} = location.state??{}
 
   const handlePayment = async () => {
     // Basic validation
@@ -37,12 +37,13 @@ function PaymentForm({ bookingData }) {
           mpesaNumber,
           cardNumber,
           cardHolderName,
+          user:signedInuser,
+          ...restOfPaymentData
         }),
       });
 
       if (paymentResponse.ok) {
-        alert('Payment successful!');
-        navigate('/booking-confirmation', { state: { bookingData } });
+        navigate('/manage-booking', { state: { bookingData } });
       } else {
         alert('Payment failed. Please try again.');
       }

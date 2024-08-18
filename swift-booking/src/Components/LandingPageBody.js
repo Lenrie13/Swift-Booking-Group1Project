@@ -8,7 +8,7 @@ import Deals from './Deals';
 import ContactInfo from './ContactInfo';
 import AboutUs from './AboutUs';
 
-function LandingPageBody({ setIsAuthenticated }) {
+function LandingPageBody({ setIsAuthenticated,setSignedInUser }) {
   const navigate = useNavigate();
   const [arrivalDate, setArrivalDate] = useState(null);
   const [departureDate, setDepartureDate] = useState(null);
@@ -76,6 +76,7 @@ function LandingPageBody({ setIsAuthenticated }) {
   
   const handleSignOut = () => {
     setIsAuthenticated(false);
+    setSignedInUser(undefined);
     navigate('/');
   };
 
@@ -273,7 +274,7 @@ function LandingPageBody({ setIsAuthenticated }) {
 
       <div className="navigation-links">
       <button onClick={toggleContactInfo} className="contact-info-link">
-        Contact Info
+        Contact Us
       </button>
       <button onClick={toggleAbout} className="about-us-link">
         About Us

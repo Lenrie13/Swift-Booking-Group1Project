@@ -56,7 +56,7 @@ const BookingPage = ({ setBookingData }) => {
 
     const handleBookingSubmit = (data) => {
         setBookingData(data);
-        navigate('/payment',{state:{totalCost:data?.totalCost}});
+        navigate('/payment',{state:{...data}});
     };
 
     const calculateAmountPayable = (roomType, guests) => {

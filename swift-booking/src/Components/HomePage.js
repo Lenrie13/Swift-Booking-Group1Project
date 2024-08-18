@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './HomePage.css';
 
-function HomePage({ setIsAuthenticated }) {
+function HomePage({ setIsAuthenticated,setSignedInUser }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
@@ -21,6 +21,7 @@ function HomePage({ setIsAuthenticated }) {
             const user = users.find(user => user.email === email && user.password === password);
 
             if (user) {
+                setSignedInUser(user)
                 setIsAuthenticated(true);
                 setError('');
             } else {
@@ -68,6 +69,7 @@ function HomePage({ setIsAuthenticated }) {
 
             if (postResponse.ok) {
                 setIsAuthenticated(true);
+                setSignedInUser(newUser);
                 setError('');
             } else {
                 setError('Error signing up');

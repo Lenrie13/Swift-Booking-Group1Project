@@ -60,7 +60,9 @@ const BookingForm = (props) => {
     if (typeof onSubmit === 'function') {
       onSubmit({
         ...formData,
-        totalCost
+        totalCost,
+        room:selectedRoomType,
+        hotel: selectedHotel
       });
     } else {
       console.error('onSubmit is not a function');

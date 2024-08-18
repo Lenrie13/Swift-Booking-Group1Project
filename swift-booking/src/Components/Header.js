@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/SwiftBookingImages/logo-images/logo2.jpeg';
 
-function Header({ setIsAuthenticated }) {
+function Header({ setIsAuthenticated, setSignedInUser}) {
     const navigate = useNavigate();
     const [hotels] = useState([
         { id: 1, name: 'Neptune Beach Resort', location: 'Diani' },
@@ -16,6 +16,7 @@ function Header({ setIsAuthenticated }) {
 
     const handleSignOut = () => {
         setIsAuthenticated(false);
+        setSignedInUser(undefined);
         navigate('/');
     };
 
