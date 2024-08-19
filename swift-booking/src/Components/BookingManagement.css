@@ -19,7 +19,7 @@
 .bookings-list {
     display: flex;
     flex-direction: column; 
-    gap: 16px; 
+    gap: 6px; 
     width: 100%; 
     max-width: 600px; 
 }

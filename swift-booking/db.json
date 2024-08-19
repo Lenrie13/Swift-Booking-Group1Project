@@ -1744,6 +1744,102 @@
           }
         ]
       }
+    },
+    {
+      "id": "f33a",
+      "amount": 3375,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "12367",
+      "cardNumber": "",
+      "cardHolderName": "",
+      "user": {
+        "id": 8,
+        "username": "Barry",
+        "email": "barry@gmail.com",
+        "password": "1234",
+        "profile": {
+          "firstName": "Barry",
+          "lastName": "Allen",
+          "phoneNumber": "989999",
+          "address": "Ruaka"
+        }
+      },
+      "name": "Josephine",
+      "idNumber": "45566",
+      "phoneNumber": "989999",
+      "age": "66",
+      "email": "juneberyl608@gmail.com",
+      "roomType": "",
+      "additionalServices": "Jetski",
+      "address": "Ruaka",
+      "room": {
+        "id": 2,
+        "type": "Double Room",
+        "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/double.jpeg",
+        "description": "A spacious twin bed room with a city view.",
+        "pricePerNight": 250,
+        "available": true
+      },
+      "hotel": {
+        "id": "1",
+        "name": "Neptune Beach Resort",
+        "location": "Diani",
+        "description": "A luxurious stay in the coastal region",
+        "amenities": [
+          "Free Wi-Fi",
+          "Swimming Pool",
+          "Gym",
+          "Beach",
+          "Spa"
+        ],
+        "pricing": {
+          "currency": "USD"
+        },
+        "gallery": [
+          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery1.jpeg",
+          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery2.jpg",
+          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery3.jpg",
+          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery4.jpg",
+          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery5.jpg",
+          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery6.jpeg",
+          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery7.jpeg",
+          "assets/SwiftBookingImages/Neptune-BeachResort/Gallery/gallery8.jpeg"
+        ],
+        "rooms": [
+          {
+            "id": 1,
+            "type": "Single Room",
+            "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/single.jpg",
+            "description": "A cozy room with all basic amenities.",
+            "pricePerNight": 150,
+            "available": true
+          },
+          {
+            "id": 2,
+            "type": "Double Room",
+            "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/double.jpeg",
+            "description": "A spacious twin bed room with a city view.",
+            "pricePerNight": 250,
+            "available": true
+          },
+          {
+            "id": 3,
+            "type": "Deluxe Room",
+            "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/deluxe.jpeg",
+            "description": "A luxurious room with a separate living area.",
+            "pricePerNight": 400,
+            "available": true
+          },
+          {
+            "id": 4,
+            "type": "Luxury Suite",
+            "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/luxury.jpeg",
+            "description": "An exclusive beachfront penthouse with top-notch amenities.",
+            "pricePerNight": 800,
+            "available": true
+          }
+        ]
+      }
     }
   ]
 }
