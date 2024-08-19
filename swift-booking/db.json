@@ -85,7 +85,7 @@
       }
     },
     {
-      "id": 8,
+      "id": "8",
       "username": "Barry",
       "email": "barry@gmail.com",
       "password": "1234",
@@ -94,6 +94,30 @@
         "lastName": "Allen",
         "phoneNumber": "989999",
         "address": "Ruaka"
+      }
+    },
+    {
+      "id": 9,
+      "username": "Green",
+      "email": "green@gmal.com",
+      "password": "1234",
+      "profile": {
+        "firstName": "Elsie",
+        "lastName": "Green",
+        "phoneNumber": "555782999",
+        "address": "Kiambu"
+      }
+    },
+    {
+      "id": 10,
+      "username": "Stacy",
+      "email": "stacy@gmail.com",
+      "password": "1234",
+      "profile": {
+        "firstName": "Stacy",
+        "lastName": "Irene",
+        "phoneNumber": "0735678389",
+        "address": "Kiambu"
       }
     }
   ],
@@ -1933,6 +1957,199 @@
             "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/luxury-room1.jpeg",
             "description": "A private villa with direct beach access.",
             "pricePerNight": 850,
+            "available": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "6eef",
+      "amount": 10710,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "234445",
+      "cardNumber": "",
+      "cardHolderName": "",
+      "user": {
+        "id": "5",
+        "username": "elly",
+        "email": "molly123@gmail.com",
+        "password": "1234",
+        "profile": {
+          "firstName": "Lenrie",
+          "lastName": "Beryl",
+          "phoneNumber": "989999",
+          "address": "Ruaka"
+        }
+      },
+      "name": "Molly",
+      "idNumber": "45566",
+      "phoneNumber": "989999",
+      "age": "32",
+      "email": "johnotis@gmail.com",
+      "roomType": "",
+      "additionalServices": "Jetski",
+      "address": "Ruaka",
+      "room": {
+        "id": 3,
+        "type": "Deluxe Room",
+        "description": "A suite with a panoramic ocean view.",
+        "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/deluxe-rooms.jpeg",
+        "pricePerNight": 450,
+        "available": true
+      },
+      "hotel": {
+        "id": "2",
+        "name": "PrideInn Beach Resort",
+        "location": "Diani",
+        "description": "Experience the best ocean views in Diani.",
+        "amenities": [
+          "Beach Access",
+          "Free Breakfast",
+          "Infinity Pool",
+          "Gym",
+          "Open Sea Aquarium",
+          "Spa"
+        ],
+        "pricing": {
+          "currency": "USD"
+        },
+        "gallery": [
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery1.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery2.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery3.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery4.jpeg",
+          "Gassets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery5.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery6.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery7.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery8.jpeg"
+        ],
+        "rooms": [
+          {
+            "id": 1,
+            "type": "Single Room",
+            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/single-room.jpeg",
+            "description": "A room with a garden view.",
+            "pricePerNight": 200,
+            "available": true
+          },
+          {
+            "id": 2,
+            "type": "Double Room",
+            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/double-rooms.jpeg",
+            "description": "A spacious room with a pool view.",
+            "pricePerNight": 350,
+            "available": true
+          },
+          {
+            "id": 3,
+            "type": "Deluxe Room",
+            "description": "A suite with a panoramic ocean view.",
+            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/deluxe-rooms.jpeg",
+            "pricePerNight": 450,
+            "available": true
+          },
+          {
+            "id": 4,
+            "type": "Luxury Suite",
+            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/luxury-room1.jpeg",
+            "description": "A private villa with direct beach access.",
+            "pricePerNight": 850,
+            "available": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "59b8",
+      "amount": 11200,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "0782356783",
+      "cardNumber": "",
+      "cardHolderName": "",
+      "user": {
+        "id": "5",
+        "username": "elly",
+        "email": "molly123@gmail.com",
+        "password": "1234",
+        "profile": {
+          "firstName": "Lenrie",
+          "lastName": "Beryl",
+          "phoneNumber": "989999",
+          "address": "Ruaka"
+        }
+      },
+      "name": "Molly",
+      "idNumber": "45566",
+      "phoneNumber": "989999",
+      "age": "34",
+      "email": "juneberyl608@gmail.com",
+      "roomType": "",
+      "additionalServices": "Jetski",
+      "address": "Ruaka",
+      "room": {
+        "id": 3,
+        "type": "Deluxe Room",
+        "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/deluxe-rooms.jpg",
+        "description": "A spacious memorable room with a separate living area.",
+        "pricePerNight": 500,
+        "available": true
+      },
+      "hotel": {
+        "id": "4",
+        "name": "Voyager Beach Resort",
+        "location": "Mombasa",
+        "description": "A modern hotel in the bustling city of Mombasa.",
+        "amenities": [
+          "Free Wi-Fi",
+          "Rooftop Bar",
+          "24/7 Gym",
+          "Beach Access",
+          "Restaurant"
+        ],
+        "pricing": {
+          "currency": "USD"
+        },
+        "gallery": [
+          "iassets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery1.jpg",
+          "iassets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery2.avif",
+          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery3.jpg",
+          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery4.jpg",
+          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery5.jpg",
+          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery6.jpg",
+          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery7.jpg",
+          "assets/SwiftBookingImages/Voyager-BeachResort/Gallery/gallery8.jpeg"
+        ],
+        "rooms": [
+          {
+            "id": 1,
+            "type": "Single Room",
+            "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/single-rooms.jpeg",
+            "description": "A comfortable room with city views.",
+            "pricePerNight": 200,
+            "available": true
+          },
+          {
+            "id": 2,
+            "type": "Double Room",
+            "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/double-rooms.jpeg",
+            "description": "A relaxing cozy room with a skyline view.",
+            "pricePerNight": 280,
+            "available": true
+          },
+          {
+            "id": 3,
+            "type": "Deluxe Room",
+            "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/deluxe-rooms.jpg",
+            "description": "A spacious memorable room with a separate living area.",
+            "pricePerNight": 500,
+            "available": true
+          },
+          {
+            "id": 4,
+            "type": "Luxury Suite",
+            "image": "assets/SwiftBookingImages/Voyager-BeachResort/Rooms/luxury-rooms.jpg",
+            "description": "The most sophisticated beachfront suite with private bar.",
+            "pricePerNight": 1000,
             "available": true
           }
         ]
