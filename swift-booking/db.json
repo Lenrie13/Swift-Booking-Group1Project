@@ -1746,10 +1746,10 @@
       }
     },
     {
-      "id": "f33a",
+      "id": "a144",
       "amount": 3375,
       "paymentMethod": "mpesa",
-      "mpesaNumber": "12367",
+      "mpesaNumber": "34",
       "cardNumber": "",
       "cardHolderName": "",
       "user": {
@@ -1836,6 +1836,103 @@
             "image": "assets/SwiftBookingImages/Neptune-BeachResort/Rooms/luxury.jpeg",
             "description": "An exclusive beachfront penthouse with top-notch amenities.",
             "pricePerNight": 800,
+            "available": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "cf72",
+      "amount": 24990,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "78888",
+      "cardNumber": "",
+      "cardHolderName": "",
+      "user": {
+        "id": 8,
+        "username": "Barry",
+        "email": "barry@gmail.com",
+        "password": "1234",
+        "profile": {
+          "firstName": "Barry",
+          "lastName": "Allen",
+          "phoneNumber": "989999",
+          "address": "Ruaka"
+        }
+      },
+      "name": "Molly",
+      "idNumber": "45566",
+      "phoneNumber": "989999",
+      "age": "32",
+      "email": "mbogomary@gmail.com",
+      "roomType": "",
+      "additionalServices": "",
+      "address": "Kiambu",
+      "room": {
+        "id": 2,
+        "type": "Double Room",
+        "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/double-rooms.jpeg",
+        "description": "A spacious room with a pool view.",
+        "pricePerNight": 350,
+        "available": true
+      },
+      "hotel": {
+        "id": "2",
+        "name": "PrideInn Beach Resort",
+        "location": "Diani",
+        "description": "Experience the best ocean views in Diani.",
+        "amenities": [
+          "Beach Access",
+          "Free Breakfast",
+          "Infinity Pool",
+          "Gym",
+          "Open Sea Aquarium",
+          "Spa"
+        ],
+        "pricing": {
+          "currency": "USD"
+        },
+        "gallery": [
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery1.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery2.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery3.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery4.jpeg",
+          "Gassets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery5.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery6.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery7.jpeg",
+          "assets/SwiftBookingImages/PrideInn-BeachResort/Gallery/gallery8.jpeg"
+        ],
+        "rooms": [
+          {
+            "id": 1,
+            "type": "Single Room",
+            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/single-room.jpeg",
+            "description": "A room with a garden view.",
+            "pricePerNight": 200,
+            "available": true
+          },
+          {
+            "id": 2,
+            "type": "Double Room",
+            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/double-rooms.jpeg",
+            "description": "A spacious room with a pool view.",
+            "pricePerNight": 350,
+            "available": true
+          },
+          {
+            "id": 3,
+            "type": "Deluxe Room",
+            "description": "A suite with a panoramic ocean view.",
+            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/deluxe-rooms.jpeg",
+            "pricePerNight": 450,
+            "available": true
+          },
+          {
+            "id": 4,
+            "type": "Luxury Suite",
+            "image": "assets/SwiftBookingImages/PrideInn-BeachResort/Rooms/luxury-room1.jpeg",
+            "description": "A private villa with direct beach access.",
+            "pricePerNight": 850,
             "available": true
           }
         ]

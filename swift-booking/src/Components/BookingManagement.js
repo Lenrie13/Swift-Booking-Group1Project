@@ -43,3 +43,5 @@ export const BookingManagement = (props) => {
         </div>
     );
 };
+
+export default BookingManagement;
