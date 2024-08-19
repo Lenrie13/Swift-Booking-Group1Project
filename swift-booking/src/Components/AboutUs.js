@@ -15,7 +15,7 @@ function AboutUs() {
         Our mission is to put access to hospitality services on
         the highest level in order to satisfy the demands and expectations of our clients.
         Our aim is to be the most trusted provider of hotel booking services across the country
-        and beyond the borders.
+        and beyond her borders.
       </p>
       <h3>Our Motto</h3>
       <p>
