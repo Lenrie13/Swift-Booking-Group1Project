@@ -1,20 +1,39 @@
-How to access the project
-git clone the repo into your local machine. 
-Then cd into swift-booking. This is the react app.
-Run npm install and then npm start to view in the web.
+## SWIFT BOOKING
+Welcome to the Swift Booking platform! This application allows users to view hotel details such as rooms, book rooms, and manage their bookings. It features user authentication, booking management, and a comprehensive interface for interacting with hotels.
 
-While working on individual components of the application,
-Create a new branch and checkout to that branch using the command git checkout -b <branch-name>
-Work from the branch then push your changes to github. Make sure you set upstream.
-Do not review your own work. Someone else will review and merge if there are no conflicts.
-Once merged, you can delete your branch.
+# Features
+User Authentication: Sign up and log in.
+Hotel Details: View information about hotels, including gallery and room types.
+Room Booking: Book rooms, view booking details, and manage bookings.
+Payment Integration: Process payments for bookings.
 
-db.json structure explained;
-Users: Contains user profiles for authentication and profile management.
-Hotels: Lists the four hotels with detailed information, including room categories and gallery images.
-Rooms: Each hotel has four room categories with descriptions, pricing, and availability status.
-Bookings: Manages the booking information, including the user who booked, the hotel, room, check-in/out dates, total price, and any additional services.
-Reviews: Allows users to submit and view reviews and ratings for hotels.
-Deals: Lists special offers and discounts associated with hotels.
+# Technologies Used
+Frontend: React, React Router
+Database: JSON server or any preferred database
+Styling: CSS for layout
+Version Control: Git
 
-I've created a temporary db.json server (Can be edited later with any changes)
+# Installation
+Clone the repository: git clone https://github.com/yourusername/Swift-Booking-Group1Project.git
+Navigate into the project directory: cd swift-booking
+Install dependencies: npm install
+Run the development server: npm start
+Run the server on a different terminal: json-server --watch db.json
+
+# Usage
+1. Sign Up or Log In:
+    Navigate to the home page.
+    Use the sign-up form to create a new account or log in with existing credentials.
+    
+2. Browse Hotels:
+    View hotel details including gallery and room options.
+
+3. Book a Room:
+    Select a hotel and room type, then proceed to book.
+
+4. Manage Bookings:
+    View and manage your bookings from the booking management page.
+
+5. Contact Us & About Us:
+    Find contact information and learn more about the project.
+
