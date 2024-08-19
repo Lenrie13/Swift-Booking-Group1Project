@@ -27,8 +27,8 @@ export const BookingManagement = (props) => {
     };
 
     return (
-        <div className="management-dashboard">
-            <h1 className="bookings-header">Management Dashboard: Bookings</h1>
+        <div className="user-dashboard">
+            <h1 className="bookings-header">User Dashboard: Bookings</h1>
             <div className="bookings-list">
                 {signedInUserBookings.map((booking) => (
                     <div key={booking.id} className="booking-item">

@@ -1649,6 +1649,101 @@
           }
         ]
       }
+    },
+    {
+      "id": "be07",
+      "amount": 1680,
+      "paymentMethod": "mpesa",
+      "mpesaNumber": "2333",
+      "cardNumber": "",
+      "cardHolderName": "",
+      "user": {
+        "id": 8,
+        "username": "Barry",
+        "email": "barry@gmail.com",
+        "password": "1234",
+        "profile": {
+          "firstName": "Barry",
+          "lastName": "Allen",
+          "phoneNumber": "989999",
+          "address": "Ruaka"
+        }
+      },
+      "name": "Josephine",
+      "idNumber": "45566",
+      "phoneNumber": "989999",
+      "age": "66",
+      "email": "josephine.ogot@student.moringaschool.com",
+      "roomType": "",
+      "additionalServices": "Gym",
+      "address": "Ruaka",
+      "room": {
+        "id": 4,
+        "type": "Luxury Suite",
+        "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/luxury-room.jpeg",
+        "description": "A private suite with elegant handmade furniture and beach access.",
+        "pricePerNight": 1050,
+        "available": true
+      },
+      "hotel": {
+        "id": "3",
+        "name": "Sarova WhiteSands Hotel",
+        "location": "Diani",
+        "description": "A peaceful retreat along the beach.",
+        "amenities": [
+          "Ski Access",
+          "Hot Tub",
+          "Fireplace",
+          "Clean Beaches"
+        ],
+        "pricing": {
+          "currency": "USD"
+        },
+        "gallery": [
+          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery1.jpeg",
+          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery2.jpeg",
+          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery3.jpeg",
+          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery4.jpeg",
+          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery5.jpeg",
+          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery6.jpeg",
+          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery7.jpeg",
+          "assets/SwiftBookingImages/SarovaWhiteSands/Gallery/gallery8.jpeg"
+        ],
+        "rooms": [
+          {
+            "id": 1,
+            "type": "Single Room",
+            "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/single-rooms.jpeg",
+            "description": "A room with a serene pool view.",
+            "pricePerNight": 200,
+            "available": true
+          },
+          {
+            "id": 2,
+            "type": "Double Room",
+            "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/double-rooms.jpeg",
+            "description": "A twin bed room with a garden-facing balcony.",
+            "pricePerNight": 300,
+            "available": true
+          },
+          {
+            "id": 3,
+            "type": "Deluxe Room",
+            "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/deluxe-rooms.jpeg",
+            "description": "A large spacious room with a cozy fireplace.",
+            "pricePerNight": 450,
+            "available": true
+          },
+          {
+            "id": 4,
+            "type": "Luxury Suite",
+            "image": "assets/SwiftBookingImages/SarovaWhiteSands/Rooms/luxury-room.jpeg",
+            "description": "A private suite with elegant handmade furniture and beach access.",
+            "pricePerNight": 1050,
+            "available": true
+          }
+        ]
+      }
     }
   ]
 }
