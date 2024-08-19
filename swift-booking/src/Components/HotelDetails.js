@@ -69,9 +69,9 @@ function HotelDetails() {
             name: 'Neptune Beach Resort',
             gallery: [neptuneGallery1, neptuneGallery2, neptuneGallery3, neptuneGallery4, neptuneGallery5, neptuneGallery6, neptuneGallery7, neptuneGallery8],
             rooms: [
-                { image: neptuneDeluxeRoom, description: 'Luxurious Deluxe Room with stunning ocean views. Enjoy top-notch amenities and a private balcony.' },
+                { image: neptuneDeluxeRoom, description: 'Breath-taking Deluxe Room with stunning ocean views. Enjoy top-notch amenities and a private balcony.' },
                 { image: neptuneDoubleRoom, description: 'Comfortable Double Room ideal for families or friends, featuring spacious interiors and modern decor.' },
-                { image: neptuneLuxuryRoom, description: 'Elegant Luxury Room with premium furnishings, perfect for a lavish stay with exceptional service.' },
+                { image: neptuneLuxuryRoom, description: 'Elegant Luxury Suite with premium furnishings, air conditioning, perfect for a lavish stay with exceptional service.' },
                 { image: neptuneSingleRoom, description: 'Cozy Single Room designed for solo travelers, offering comfort and functionality at an affordable rate.' }
             ]
         },
@@ -81,7 +81,7 @@ function HotelDetails() {
             rooms: [
                 { image: prideInnDeluxeRoom, description: 'Spacious Deluxe Room with modern amenities, perfect for a relaxing vacation.' },
                 { image: prideInnDoubleRoom, description: 'Well-appointed Double Room offering comfort and convenience for guests.' },
-                { image: prideInnLuxuryRoom, description: 'Luxury Room with exquisite decor and superior comfort, ideal for a high-end experience.' },
+                { image: prideInnLuxuryRoom, description: 'Luxury Suite with exquisite decor and superior comfort, ideal for a high-end experience.' },
                 { image: prideInnSingleRoom, description: 'Single Room with all essential amenities, perfect for solo travelers.' }
             ]
         },
@@ -91,7 +91,7 @@ function HotelDetails() {
             rooms: [
                 { image: sarovaDeluxeRoom, description: 'Deluxe Room with a spacious layout and luxurious amenities for a comfortable stay.' },
                 { image: sarovaDoubleRoom, description: 'Double Room featuring modern decor and ample space for a pleasant stay.' },
-                { image: sarovaLuxuryRoom, description: 'Opulent Luxury Room with premium features and stunning views.' },
+                { image: sarovaLuxuryRoom, description: 'Opulent Luxury Suite with premium features and stunning beachfront views.' },
                 { image: sarovaSingleRoom, description: 'Single Room with modern amenities, designed for a comfortable solo stay.' }
             ]
         },
@@ -101,7 +101,7 @@ function HotelDetails() {
             rooms: [
                 { image: voyagerDeluxeRoom, description: 'Deluxe Room with beautiful ocean views and luxurious amenities.' },
                 { image: voyagerDoubleRoom, description: 'Double Room with spacious interiors and modern conveniences.' },
-                { image: voyagerLuxuryRoom, description: 'Luxury Room offering a lavish experience with top-of-the-line amenities.' },
+                { image: voyagerLuxuryRoom, description: 'Luxury Suite offering a lavish experience with top-of-the-line amenities.' },
                 { image: voyagerSingleRoom, description: 'Single Room designed for a relaxing stay with essential comforts.' }
             ]
         }
@@ -119,9 +119,9 @@ function HotelDetails() {
 
     return (
         <div className='hotel-details'>
-            <h2>{selectedHotel.name}</h2>
+            <h2 className='selected-hotel-name'>{selectedHotel.name}</h2>
             <div className='hotel-gallery'>
-                <h4>Gallery</h4>
+                <h4 className='gallery-header'>Gallery</h4>
                 <div className='gallery-images'>
                     {selectedHotel.gallery.map((image, index) => (
                         <div key={index} className='gallery-image'>
@@ -132,7 +132,7 @@ function HotelDetails() {
                 </div>
             </div>
             <div className='hotel-rooms'>
-                <h4>Rooms</h4>
+                <h4 className='rooms-header'>Rooms</h4>
                 <div className='room-images'>
                     {selectedHotel.rooms.map((room, index) => (
                         <div key={index} className='room-image'>
