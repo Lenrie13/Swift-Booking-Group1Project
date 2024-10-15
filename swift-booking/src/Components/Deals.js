@@ -2,29 +2,56 @@ import React, { useEffect, useState } from 'react';
 import './Deals.css';
 
 const Deals = () => {
-  const [deals, setDeals] = useState([]);
+  const [discounts, setDiscounts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/deals') // Adjust the URL if needed
-      .then((response) => response.json())
-      .then((data) => setDeals(data))
-      .catch((error) => console.error('Error fetching deals:', error));
+    // Simulating fetching discount data from an API
+    const fetchDiscounts = () => {
+      // Example discount notifications
+      const discountData = [
+        {
+          id: 1,
+          title: 'Spring Sale!',
+          description: 'Get 20% off on all rooms when you book for 3 nights or more.',
+          validTill: 'April 30, 2024',
+        },
+        {
+          id: 2,
+          title: 'Weekend Special!',
+          description: 'Book a room for the weekend and enjoy 15% off your stay.',
+          validTill: 'Ongoing',
+        },
+        {
+          id: 3,
+          title: 'Early Bird Discount!',
+          description: 'Book 30 days in advance and receive a 25% discount on your booking.',
+          validTill: 'Ongoing',
+        },
+        {
+          id: 4,
+          title: 'Last Minute Deals!',
+          description: 'Up to 30% off on rooms booked within 48 hours of arrival.',
+          validTill: 'Ongoing',
+        },
+      ];
+
+      setDiscounts(discountData);
+    };
+
+    fetchDiscounts();
   }, []);
 
   return (
     <div className="deals-container">
-      <h2>Special Deals and Discounts</h2>
-      {deals.length === 0 ? (
-        <p>No deals available at the moment.</p>
+      <h2>Special Discounts and Notifications</h2>
+      {discounts.length === 0 ? (
+        <p>No discounts available at the moment.</p>
       ) : (
         <ul className="deals-list">
-          {deals.map((deal) => (
+          {discounts.map((deal) => (
             <li key={deal.id} className="deal-item">
               <h3>{deal.title}</h3>
               <p>{deal.description}</p>
-              <p>
-                <strong>Discount:</strong> {deal.discountPercentage}% off
-              </p>
               <p>
                 <strong>Valid Till:</strong> {deal.validTill}
               </p>

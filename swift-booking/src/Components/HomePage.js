@@ -1,7 +1,8 @@
+// HomePage.js (React Frontend)
 import React, { useState } from 'react';
 import './HomePage.css';
 
-function HomePage({ setIsAuthenticated,setSignedInUser }) {
+function HomePage({ setIsAuthenticated, setSignedInUser }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
@@ -16,19 +17,25 @@ function HomePage({ setIsAuthenticated,setSignedInUser }) {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/users');
-            const users = await response.json();
-            const user = users.find(user => user.email === email && user.password === password);
+            const response = await fetch('http://localhost:5000/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
 
-            if (user) {
-                setSignedInUser(user)
+            if (response.ok) {
+                const data = await response.json();
+                setSignedInUser(data.username);
                 setIsAuthenticated(true);
                 setError('');
             } else {
-                setError('Invalid email or password');
+                const errorData = await response.json();
+                setError(errorData.message || 'Error logging in');
             }
         } catch (err) {
-            console.error('Error fetching users:', err);
+            console.error('Error logging in:', err);
             setError('Error logging in');
         }
     };
@@ -37,42 +44,26 @@ function HomePage({ setIsAuthenticated,setSignedInUser }) {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3000/users');
-            const users = await response.json();
-            const existingUser = users.find(user => user.email === email);
-
-            if (existingUser) {
-                setError('Email already in use');
-                return;
-            }
-
-            const newUser = {
-                id: users.length + 1,
-                username,
-                email,
-                password,
-                profile: {
-                    firstName,
-                    lastName,
-                    phoneNumber,
-                    address
-                }
-            };
-
-            const postResponse = await fetch('http://localhost:3000/users', {
+            const response = await fetch('http://localhost:5000/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(newUser)
+                body: JSON.stringify({
+                    username,
+                    email,
+                    password,
+                })
             });
 
-            if (postResponse.ok) {
+            if (response.ok) {
+                const data = await response.json();
+                setSignedInUser(username);
                 setIsAuthenticated(true);
-                setSignedInUser(newUser);
                 setError('');
             } else {
-                setError('Error signing up');
+                const errorData = await response.json();
+                setError(errorData.message || 'Error signing up');
             }
         } catch (err) {
             console.error('Error signing up:', err);
@@ -116,46 +107,6 @@ function HomePage({ setIsAuthenticated,setSignedInUser }) {
                                     id="username"
                                     value={username}
                                     onChange={(event) => setUsername(event.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="firstName">First Name</label>
-                                <input
-                                    type="text"
-                                    id="firstName"
-                                    value={firstName}
-                                    onChange={(event) => setFirstName(event.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="lastName">Last Name</label>
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    value={lastName}
-                                    onChange={(event) => setLastName(event.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="phoneNumber">Phone Number</label>
-                                <input
-                                    type="text"
-                                    id="phoneNumber"
-                                    value={phoneNumber}
-                                    onChange={(event) => setPhoneNumber(event.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="address">Address</label>
-                                <input
-                                    type="text"
-                                    id="address"
-                                    value={address}
-                                    onChange={(event) => setAddress(event.target.value)}
                                     required
                                 />
                             </div>
