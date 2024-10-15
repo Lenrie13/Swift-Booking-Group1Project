@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { addDays } from 'date-fns';
@@ -8,7 +8,63 @@ import Deals from './Deals';
 import ContactInfo from './ContactInfo';
 import AboutUs from './AboutUs';
 
-function LandingPageBody({ setIsAuthenticated,setSignedInUser }) {
+// Room data based on your previous room details
+const roomDetails = {
+  1: {
+    name: 'Deluxe Room',
+    price: 150,
+    features: [
+      'Breath-taking ocean views',
+      'Private balcony',
+      'Free WiFi',
+      'Air conditioning',
+      'Room service available',
+      'King-sized bed',
+      'Complimentary breakfast',
+    ],
+  },
+  2: {
+    name: 'Double Room',
+    price: 100,
+    features: [
+      'Spacious interiors',
+      'Modern decor',
+      'Free WiFi',
+      'Mini fridge',
+      'Two queen-sized beds',
+      'Ideal for families or friends',
+      'Access to pool and gym',
+    ],
+  },
+  3: {
+    name: 'Luxury Room',
+    price: 250,
+    features: [
+      'Premium furnishings',
+      'Top-notch amenities',
+      'Private jacuzzi',
+      'Free WiFi',
+      'Exceptional room service',
+      'Oceanfront view',
+      'Complimentary spa access',
+    ],
+  },
+  4: {
+    name: 'Single Room',
+    price: 80,
+    features: [
+      'Cozy and comfortable',
+      'Designed for solo travelers',
+      'Free WiFi',
+      'Mini bar',
+      'Affordable rate',
+      'Work desk available',
+      'Access to hotel facilities',
+    ],
+  },
+};
+
+function LandingPageBody({ setIsAuthenticated, setSignedInUser }) {
   const navigate = useNavigate();
   const [arrivalDate, setArrivalDate] = useState(null);
   const [departureDate, setDepartureDate] = useState(null);
@@ -43,6 +99,7 @@ function LandingPageBody({ setIsAuthenticated,setSignedInUser }) {
   }, []);
 
   const calculateNumberOfNights = (arrivalDate, departureDate) => {
+    if (!arrivalDate || !departureDate) return 0;
     const arrival = new Date(arrivalDate);
     const departure = new Date(departureDate);
     const differenceInTime = departure.getTime() - arrival.getTime();
@@ -64,16 +121,17 @@ function LandingPageBody({ setIsAuthenticated,setSignedInUser }) {
       setGuests(value);
     }
   };
+
   const toggleContactInfo = () => {
     setShowContactInfo(!showContactInfo);
-    setShowAbout(false); 
+    setShowAbout(false);
   };
-  
+
   const toggleAbout = () => {
     setShowAbout(!showAbout);
-    setShowContactInfo(false); 
+    setShowContactInfo(false);
   };
-  
+
   const handleSignOut = () => {
     setIsAuthenticated(false);
     setSignedInUser(undefined);
@@ -165,7 +223,7 @@ function LandingPageBody({ setIsAuthenticated,setSignedInUser }) {
                 <input
                   type="text"
                   id="numberOfNights"
-                  value={calculateNumberOfNights() || ''}
+                  value={calculateNumberOfNights(arrivalDate, departureDate) || ''}
                   readOnly
                 />
               </div>
@@ -195,6 +253,16 @@ function LandingPageBody({ setIsAuthenticated,setSignedInUser }) {
                     <option key={room.type} value={room.type}>{room.type}</option>
                   ))}
                 </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="roomDetails">Room Details:</label>
+                <textarea
+                  id="roomDetails"
+                  value={selectedRoom ? `${roomDetails[selectedRoom]?.name}\nPrice: $${roomDetails[selectedRoom]?.price}\nFeatures:\n${roomDetails[selectedRoom]?.features.join(', ')}` : 'Please select a room'}
+                  readOnly
+                  rows={5}
+                  className="w-full"
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="name">Name:</label>
@@ -258,7 +326,7 @@ function LandingPageBody({ setIsAuthenticated,setSignedInUser }) {
                   value={
                     selectedHotel && selectedRoom
                       ? `${
-                          (hotels.find(hotel => hotel.id === selectedHotel)?.rooms.find(room => room.type === selectedRoom)?.price || 0) * calculateNumberOfNights() * guests
+                          (hotels.find(hotel => hotel.id === selectedHotel)?.rooms.find(room => room.type === selectedRoom)?.price || 0) * calculateNumberOfNights(arrivalDate, departureDate) * guests
                         }`
                       : 'Please select hotel and room type'
                   }
@@ -273,25 +341,25 @@ function LandingPageBody({ setIsAuthenticated,setSignedInUser }) {
       <Deals />
 
       <div className="navigation-links">
-      <button onClick={toggleContactInfo} className="contact-info-link">
-        Contact Us
-      </button>
-      <button onClick={toggleAbout} className="about-us-link">
-        About Us
-      </button>
-    </div>
-
-    {showContactInfo && (
-      <div className="contact-info-section">
-        <ContactInfo />
+        <button onClick={toggleContactInfo} className="contact-info-link">
+          Contact Us
+        </button>
+        <button onClick={toggleAbout} className="about-us-link">
+          About Us
+        </button>
       </div>
-    )}
 
-    {showAbout && (
-      <div className="about-us-section">
-        <AboutUs />
-      </div>
-    )}
+      {showContactInfo && (
+        <div className="contact-info-section">
+          <ContactInfo />
+        </div>
+      )}
+
+      {showAbout && (
+        <div className="about-us-section">
+          <AboutUs />
+        </div>
+      )}
       <button className="sign-out-button" onClick={handleSignOut}>Sign Out</button>
     </div>
   );

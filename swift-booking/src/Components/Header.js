@@ -6,10 +6,10 @@ import logo from '../assets/SwiftBookingImages/logo-images/logo2.jpeg';
 function Header({ setIsAuthenticated, setSignedInUser}) {
     const navigate = useNavigate();
     const [hotels] = useState([
-        { id: 1, name: 'Neptune Beach Resort', location: 'Diani' },
-        { id: 2, name: 'Pride Inn Beach Resort', location: 'Diani' },
-        { id: 3, name: 'Sarova White Sands', location: 'Diani' },
-        { id: 4, name: 'Voyager Beach Resort', location: 'Mombasa' }
+        { id: 1, name: 'Deluxe Room', location: 'Diani' },
+        { id: 2, name: 'Double Room', location: 'Diani' },
+        { id: 3, name: 'Luxury Room', location: 'Diani' },
+        { id: 4, name: 'Single Room', location: 'Mombasa' }
     ]);
     const [searchQuery, setSearchQuery] = useState('');
     const [isHotelNameVisible, setHotelNameVisible] = useState(false);
