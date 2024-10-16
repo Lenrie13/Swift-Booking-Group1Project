@@ -1,26 +1,45 @@
+/* Deals.css */
+
 .deals-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-  }
-  
-  .deals-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .deal-item {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .deal-item h3 {
-    margin: 0 0 5px;
-    color: #333;
-  }
-  
-  .deal-item p {
-    margin: 5px 0;
-    color: #555;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.deals-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.deals-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.deal-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.deal-item h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #555;
+}
+
+.deal-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+.deal-item:last-child {
+  border-bottom: none;
+}

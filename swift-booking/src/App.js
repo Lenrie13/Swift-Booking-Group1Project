@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './Components/Header';
 import LandingPageBody from './Components/LandingPageBody';
 import HomePage from './Components/HomePage';
@@ -13,36 +13,42 @@ import { BookingManagement } from './Components/BookingManagement';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [bookingData, setBookingData] = useState(null);
-  const [signedInuser, setSignedInUser]=useState()
+  const [signedInUser, setSignedInUser] = useState(null);
 
   return (
     <Router>
       <div className="App">
+        {/* Conditionally render Header based on authentication status */}
+        {isAuthenticated && (
+          <Header setIsAuthenticated={setIsAuthenticated} setSignedInUser={setSignedInUser} />
+        )}
+
         <Routes>
+          {/* Public routes */}
           <Route
             path="/"
             element={
               isAuthenticated ? (
-                <>
-                <Header setIsAuthenticated={setIsAuthenticated} setSignedInUser={setSignedInUser}/>
-                <LandingPageBody setIsAuthenticated={setIsAuthenticated} setSignedInUser={setSignedInUser}/>
-                </>
+                <LandingPageBody setIsAuthenticated={setIsAuthenticated} setSignedInUser={setSignedInUser} />
               ) : (
-                <HomePage setIsAuthenticated={setIsAuthenticated} setSignedInUser={setSignedInUser}/>
+                <HomePage setIsAuthenticated={setIsAuthenticated} setSignedInUser={setSignedInUser} />
               )
             }
           />
           <Route path="/contact-info" element={<ContactInfo />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/book-now" element={<BookingPage setBookingData={setBookingData} />} />
-          <Route path='/manage-booking' element={<BookingManagement signedInUser={signedInuser}/>}/>
-
-          {bookingData && (
-            <Route path="/payment" element={<PaymentForm bookingData={bookingData} signedInuser={signedInuser}/>} />
+          <Route path="/hotel/:id" element={<HotelDetails />} />
+          
+          {/* Protected routes */}
+          {isAuthenticated && (
+            <>
+              <Route path="/book-now" element={<BookingPage setBookingData={setBookingData} />} />
+              <Route path="/manage-booking" element={<BookingManagement signedInUser={signedInUser} />} />
+              {bookingData && <Route path="/payment" element={<PaymentForm bookingData={bookingData} signedInUser={signedInUser} />} />}
+            </>
           )}
 
-          <Route path="/hotel/:id" element={<HotelDetails />} />
-
+          {/* Catch-all route for unknown paths */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>

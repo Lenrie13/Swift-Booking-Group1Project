@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/SwiftBookingImages/logo-images/logo2.jpeg';
 
-function Header({ setIsAuthenticated, setSignedInUser}) {
+function Header({ setIsAuthenticated, setSignedInUser }) {
     const navigate = useNavigate();
     const [hotels] = useState([
         { id: 1, name: 'Deluxe Room', location: 'Diani' },
@@ -33,8 +33,16 @@ function Header({ setIsAuthenticated, setSignedInUser}) {
         <header className='header'>
             <div className='logo-container'>
                 <img src={logo} alt='Logo' className='logo' />
-                <div className='site-name'>Swift Booking</div>
+                <div className='site-name'>Swift Hotel</div>
             </div>
+            <nav className='navbar'>
+                <ul>
+                    <li><Link to="/">Home</Link></li>
+                    {/* Updated paths to match the routes in App.js */}
+                    <li><Link to="/about-us">About Us</Link></li>
+                    <li><Link to="/contact-info">Contact Us</Link></li>
+                </ul>
+            </nav>
             <div className='search-bar-container'>
                 <input
                     type='text'

@@ -339,28 +339,20 @@ function LandingPageBody({ setIsAuthenticated, setSignedInUser }) {
         )}
       </div>
       <Deals />
-
-      <div className="navigation-links">
-        <button onClick={toggleContactInfo} className="contact-info-link">
-          Contact Us
-        </button>
-        <button onClick={toggleAbout} className="about-us-link">
-          About Us
-        </button>
-      </div>
-
-      {showContactInfo && (
-        <div className="contact-info-section">
-          <ContactInfo />
+      
+      
+      {/* Footer Section */}
+      <footer className="footer">
+        <div className="footer-content">
+          <p>&copy; {new Date().getFullYear()} Swift Booking. All rights reserved.</p>
+          <p>Follow us on:
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> Facebook</a> |
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> Twitter</a> |
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> Instagram</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> Instagram</a>
+          </p>
         </div>
-      )}
-
-      {showAbout && (
-        <div className="about-us-section">
-          <AboutUs />
-        </div>
-      )}
-      <button className="sign-out-button" onClick={handleSignOut}>Sign Out</button>
+      </footer>
     </div>
   );
 }

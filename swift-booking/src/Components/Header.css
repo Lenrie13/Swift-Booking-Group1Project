@@ -4,7 +4,7 @@
     align-items: center;
     padding: 10px;
     background-color: #F7EFE5;
-    position: relative; /* Add relative positioning for the header */
+    position: relative;
 }
 
 .logo-container {
@@ -22,34 +22,57 @@
     font-size: 30px;
     font-weight: bold;
     margin-top: 40px;
-    color: #333; 
-    letter-spacing: 1px; 
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.navbar {
+    flex-grow: 1;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.navbar li:hover {
+    text-decoration: underline;
 }
 
 .search-bar-container {
     position: relative;
-    flex-grow: 1; 
-    margin: 0 20px; 
+    margin-left: auto;
+    margin-right: 20px;
+    width: 300px; /* Set a fixed width for the search bar */
 }
 
 input[type='text'] {
     padding: 5px;
-    margin-top: 40px;
-    width: 100%; 
-    box-sizing: border-box; 
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hotel-names {
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     background: white;
     border: 1px solid #ddd;
-    max-height: 200px; 
+    max-height: 200px;
     overflow-y: auto;
-    width: 100%; 
-    z-index: 1000; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hotel-name {
