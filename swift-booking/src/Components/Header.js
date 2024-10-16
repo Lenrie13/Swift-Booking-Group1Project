@@ -8,7 +8,7 @@ function Header({ setIsAuthenticated, setSignedInUser }) {
     const [hotels] = useState([
         { id: 1, name: 'Deluxe Room', location: 'Diani' },
         { id: 2, name: 'Double Room', location: 'Diani' },
-        { id: 3, name: 'Luxury Room', location: 'Diani' },
+        { id: 3, name: 'Luxury Suite', location: 'Diani' },
         { id: 4, name: 'Single Room', location: 'Mombasa' }
     ]);
     const [searchQuery, setSearchQuery] = useState('');
@@ -33,7 +33,7 @@ function Header({ setIsAuthenticated, setSignedInUser }) {
         <header className='header'>
             <div className='logo-container'>
                 <img src={logo} alt='Logo' className='logo' />
-                <div className='site-name'>Swift Hotel</div>
+                <div className='site-name'>Swifty Hotel</div>
             </div>
             <nav className='navbar'>
                 <ul>

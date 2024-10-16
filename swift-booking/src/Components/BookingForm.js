@@ -3,14 +3,16 @@ import { useLocation } from 'react-router-dom';
 import './BookingForm.css';
 
 const BookingForm = (props) => {
-  const {onSubmit, deals = [],  selectedHotel, numberOfGuests} = props;
+  const { onSubmit, deals = [] } = props;
   const [selectedRoomType, setSelectedRoomType] = useState();
+  const [numberOfRooms, setNumberOfRooms] = useState(1); // Default to 1 room
 
   const location = useLocation();
   const {
     arrivalDate,
     departureDate,
     numberOfNights,
+    numberOfGuests,
     name: locationName,
     age: locationAge,
     address,
@@ -25,20 +27,29 @@ const BookingForm = (props) => {
     phoneNumber: locationPhoneNumber || '',
     age: locationAge || '',
     email: locationEmail || '',
-    roomType: '',
     additionalServices: '',
     totalCost: 0,
   });
 
-  const totalCost = useMemo(() => {
-    const deal = deals?.find((deal) => deal.id === selectedHotel?.id);
-    if (selectedRoomType && numberOfNights && numberOfGuests) {
-      const totalCostWithoutDeal = selectedRoomType?.pricePerNight * numberOfNights * numberOfGuests;
+  const roomTypes = [
+    { id: 1, type: 'Single Room', pricePerNight: 80 },
+    { id: 2, type: 'Double Room', pricePerNight: 100 },
+    { id: 3, type: 'Deluxe Room', pricePerNight: 150 },
+    { id: 4, type: 'Luxury Suite', pricePerNight: 250 },
+  ]; // Updated room types and prices
 
-      return deal ? (100 - deal.discountPercentage) / 100 * totalCostWithoutDeal : totalCostWithoutDeal;
+  const totalCost = useMemo(() => {
+    const deal = deals?.find((deal) => deal.hotelName === 'Swifty Hotel');
+    if (selectedRoomType && numberOfNights && numberOfGuests && numberOfRooms) {
+      const totalCostWithoutDeal =
+        selectedRoomType?.pricePerNight * numberOfNights * numberOfGuests * numberOfRooms;
+
+      return deal
+        ? (100 - deal.discountPercentage) / 100 * totalCostWithoutDeal
+        : totalCostWithoutDeal;
     }
     return 0;
-  }, [selectedHotel, selectedRoomType, numberOfNights, numberOfGuests, deals]);
+  }, [selectedRoomType, numberOfNights, numberOfGuests, numberOfRooms, deals]);
 
   const handleChange = (e) => {
     setFormData({
@@ -47,13 +58,15 @@ const BookingForm = (props) => {
     });
   };
 
-
   const handleRoomTypeChange = (e) => {
     const selectedRoomTypeId = parseInt(e.target.value);
-    const selectedRoomType = selectedHotel?.rooms?.find((room)=>room.id===selectedRoomTypeId);
-    setSelectedRoomType(selectedRoomType);
+    const room = roomTypes.find((room) => room.id === selectedRoomTypeId);
+    setSelectedRoomType(room);
   };
-  
+
+  const handleRoomCountChange = (change) => {
+    setNumberOfRooms((prev) => Math.max(prev + change, 1)); // Ensure at least 1 room
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,8 +74,9 @@ const BookingForm = (props) => {
       onSubmit({
         ...formData,
         totalCost,
-        room:selectedRoomType,
-        hotel: selectedHotel
+        room: selectedRoomType,
+        hotel: { name: 'Swifty Hotel' }, // Hardcoded hotel name
+        numberOfRooms, // Include number of rooms in submission
       });
     } else {
       console.error('onSubmit is not a function');
@@ -71,7 +85,7 @@ const BookingForm = (props) => {
 
   return (
     <div className="booking-form">
-      <h2>Booking Details</h2>
+      <h2>Booking Details for Swifty Hotel</h2> {/* Hardcoded hotel name */}
       <form onSubmit={handleSubmit}>
         <div className="booking-form-group">
           <label htmlFor="arrivalDate">Arrival Date:</label>
@@ -100,7 +114,7 @@ const BookingForm = (props) => {
             readOnly
           />
         </div>
-        <div className="fbooking-form-group">
+        <div className="booking-form-group">
           <label htmlFor="numberOfNights">Number of Nights:</label>
           <input
             type="text"
@@ -186,15 +200,23 @@ const BookingForm = (props) => {
           <select
             id="roomType"
             name="roomType"
-            value={selectedRoomType?.id??''}
+            value={selectedRoomType?.id ?? ''}
             onChange={handleRoomTypeChange}
             required
           >
             <option value="" disabled>Select Room Type</option>
-            {selectedHotel?.rooms?.map((room)=>{
-              return  <option value={room.id} key={room.id}>{room?.type}</option>
-            })}
+            {roomTypes.map((room) => (
+              <option value={room.id} key={room.id}>{room.type}</option>
+            ))}
           </select>
+        </div>
+        <div className="booking-form-group">
+          <label htmlFor="numberOfRooms">Number of Rooms:</label>
+          <div>
+            <button type="button" onClick={() => handleRoomCountChange(-1)}>-</button>
+            <span>{numberOfRooms}</span>
+            <button type="button" onClick={() => handleRoomCountChange(1)}>+</button>
+          </div>
         </div>
         <div className="booking-form-group">
           <label htmlFor="additionalServices">Additional Services:</label>

@@ -1,4 +1,3 @@
-// HomePage.js (React Frontend)
 import React, { useState } from 'react';
 import './HomePage.css';
 
@@ -6,10 +5,6 @@ function HomePage({ setIsAuthenticated, setSignedInUser }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [address, setAddress] = useState('');
     const [isSignUp, setIsSignUp] = useState(false);
     const [error, setError] = useState('');
 
@@ -17,7 +12,7 @@ function HomePage({ setIsAuthenticated, setSignedInUser }) {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/auth/login', {
+            const response = await fetch('http://127.0.0.1:5001/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -44,7 +39,7 @@ function HomePage({ setIsAuthenticated, setSignedInUser }) {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/auth/register', {
+            const response = await fetch('http://127.0.0.1:5001/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -99,18 +94,16 @@ function HomePage({ setIsAuthenticated, setSignedInUser }) {
                         />
                     </div>
                     {isSignUp && (
-                        <>
-                            <div className="form-group">
-                                <label htmlFor="username">Username</label>
-                                <input
-                                    type="text"
-                                    id="username"
-                                    value={username}
-                                    onChange={(event) => setUsername(event.target.value)}
-                                    required
-                                />
-                            </div>
-                        </>
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input
+                                type="text"
+                                id="username"
+                                value={username}
+                                onChange={(event) => setUsername(event.target.value)}
+                                required
+                            />
+                        </div>
                     )}
                     <div className="button-container">
                         {isSignUp ? (

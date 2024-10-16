@@ -39,7 +39,7 @@ const roomData = {
     price: 100,
   },
   3: {
-    name: 'Luxury Room',
+    name: 'Luxury Suite',
     image: neptuneLuxuryRoom,
     features: [
       'Premium furnishings',
@@ -105,7 +105,7 @@ function HotelDetails() {
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/create', {
+      const response = await fetch('http://127.0.0.1:5001/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
