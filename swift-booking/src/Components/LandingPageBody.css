@@ -214,3 +214,32 @@
   .contact-info{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
+
+  /* Footer styling */
+.footer {
+  background-color: #2E073F;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  margin-top: 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.footer-content a {
+  color: #FFD700;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-content a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}

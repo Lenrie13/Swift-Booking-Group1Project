@@ -13,7 +13,7 @@ const Deals = () => {
           id: 1,
           title: 'Spring Sale!',
           description: 'Get 20% off on all rooms when you book for 3 nights or more.',
-          validTill: 'April 30, 2024',
+          validTill: 'April 30, 2025',
         },
         {
           id: 2,
