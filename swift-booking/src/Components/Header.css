@@ -87,9 +87,11 @@ input[type='text'] {
 .sign-out-button-container {
     display: flex;
     align-items: center;
+    margin-top: -20px;
 }
 
 .sign-out-button {
-    padding: 5px 10px;
-    margin-top: 90px;
+    padding: 2px 4px;
+    margin-top: 80px;
+    background-color: purple;
 }

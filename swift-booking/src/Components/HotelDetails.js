@@ -138,27 +138,27 @@ function HotelDetails() {
           <img 
             src={selectedRoom.image} 
             alt={selectedRoom.name} 
-            className='w-full h-72 object-cover rounded-t-lg' 
+            className='room-image' 
           />
-          <div className='p-6'>
-            <h2 className='text-3xl font-bold text-gray-900 mb-4'>{selectedRoom.name}</h2>
+          <div className='room-details'>
+            <h2 className='room-name'>{selectedRoom.name}</h2>
             <div className='room-features mb-4'>
-              <h4 className='text-lg font-semibold text-gray-700 mb-2'>Features:</h4>
-              <ul className='list-disc list-inside mb-4 space-y-1'>
+              <h4 className='features'>Amenities:</h4>
+              <ul className='feature-details'>
                 {selectedRoom.features.map((feature, index) => (
                   <li key={index} className='text-gray-800'>{feature}</li>
                 ))}
               </ul>
               <p className='font-semibold text-xl text-gray-800'>
-                <span className='text-lg'>Price per night:</span> <span className='text-blue-600'>${selectedRoom.price}</span>
+                <span className='room-price'>Price per night:</span> <span className='text-blue-600'>${selectedRoom.price}</span>
               </p>
             </div>
             <div className='booking-form'>
               <button 
-                className='w-full bg-blue-600 text-white py-3 rounded-md shadow hover:bg-blue-700 transition duration-300 text-lg font-semibold'
+                className='book-now-btn'
                 onClick={() => setShowBookingForm(true)}
               >
-                Book Now
+                Book Now!
               </button>
             </div>
           </div>
@@ -167,9 +167,9 @@ function HotelDetails() {
 
       {/* Booking Form Modal */}
       {showBookingForm && (
-        <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
-          <div className='bg-white rounded-lg p-6 w-11/12 md:w-1/3 shadow-lg'>
-            <h4 className='text-2xl font-semibold mb-2'>Complete Your Booking</h4>
+        <div className='booking-section'>
+          <div className='booking-form'>
+            <h4 className='complete-booking'>Complete Your Booking</h4>
             <form onSubmit={handleSubmit} className='space-y-4'>
               <input
                 type="text"
@@ -178,7 +178,7 @@ function HotelDetails() {
                 value={bookingDetails.fullName}
                 onChange={handleInputChange}
                 required
-                className='w-full p-2 border rounded'
+                className='fullname-field'
               />
               <input
                 type="email"
@@ -187,7 +187,7 @@ function HotelDetails() {
                 value={bookingDetails.email}
                 onChange={handleInputChange}
                 required
-                className='w-full p-2 border rounded'
+                className='email-field'
               />
               <input
                 type="text"
@@ -196,7 +196,7 @@ function HotelDetails() {
                 value={bookingDetails.phone}
                 onChange={handleInputChange}
                 required
-                className='w-full p-2 border rounded'
+                className='phone-field'
               />
               <input
                 type="number"
@@ -205,20 +205,20 @@ function HotelDetails() {
                 value={bookingDetails.stayDuration}
                 onChange={handleInputChange}
                 required
-                className='w-full p-2 border rounded'
+                className='stay-duration'
               />
               <button 
                 type="submit"
-                className='w-full bg-green-600 text-white py-3 rounded-md shadow hover:bg-green-700 transition duration-300 text-lg font-semibold'
+                className='confirm-booking-button'
               >
                 Confirm Booking
               </button>
               <button 
                 type="button"
                 onClick={() => setShowBookingForm(false)}
-                className='w-full bg-red-600 text-white py-3 rounded-md shadow hover:bg-red-700 transition duration-300 text-lg font-semibold'
+                className='cancel-booking-button'
               >
-                Cancel
+                Cancel Booking
               </button>
             </form>
           </div>
