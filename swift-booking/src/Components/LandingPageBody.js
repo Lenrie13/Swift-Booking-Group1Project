@@ -344,7 +344,7 @@ function LandingPageBody({ setIsAuthenticated, setSignedInUser }) {
       {/* Footer Section */}
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; {new Date().getFullYear()} Swift Booking. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Swifty Hotel. All rights reserved.</p>
           <p>Follow us on:
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> Facebook</a> |
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> Twitter</a> |
