@@ -347,8 +347,8 @@ function LandingPageBody({ setIsAuthenticated, setSignedInUser }) {
           <p>&copy; {new Date().getFullYear()} Swifty Hotel. All rights reserved.</p>
           <p>Follow us on:
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"> Facebook</a> |
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> Twitter</a> |
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> Instagram</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"> X</a> |
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer"> TikTok</a> |
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> Instagram</a>
           </p>
         </div>
