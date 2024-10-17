@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './HomePage.css';
+import {Config} from '../config';
 
 function HomePage({ setIsAuthenticated, setSignedInUser }) {
     const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ function HomePage({ setIsAuthenticated, setSignedInUser }) {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://127.0.0.1:5001/auth/login', {
+            const response = await fetch(`${Config.BACKEND_BASE_URI}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -39,7 +40,7 @@ function HomePage({ setIsAuthenticated, setSignedInUser }) {
         event.preventDefault();
 
         try {
-            const response = await fetch('http://127.0.0.1:5001/auth/register', {
+            const response = await fetch(`${Config.BACKEND_BASE_URI}/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
