@@ -7,6 +7,7 @@ import neptuneDeluxeRoom from "../assets/SwiftBookingImages/Neptune-BeachResort/
 import neptuneDoubleRoom from "../assets/SwiftBookingImages/Neptune-BeachResort/Rooms/double.jpeg";
 import neptuneLuxuryRoom from "../assets/SwiftBookingImages/Neptune-BeachResort/Rooms/luxury.jpeg";
 import neptuneSingleRoom from "../assets/SwiftBookingImages/Neptune-BeachResort/Rooms/single.jpg";
+import { Config } from "../config";
 
 // Sample room data with detailed features
 const roomData = {
@@ -106,7 +107,7 @@ function HotelDetails() {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5001/bookings/create", {
+      const response = await fetch(`${Config.BACKEND_BASE_URI}/bookings/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -137,7 +138,7 @@ function HotelDetails() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5001/payments/paystack/initialize",
+        `${Config.BACKEND_BASE_URI}/payments/paystack/initialize`,
         {
           method: "POST",
           headers: {
@@ -168,7 +169,7 @@ function HotelDetails() {
   const verifyPayment = async (reference) => {
     try {
       const response = await fetch(
-        `http://127.0.0.1:5001/payments/paystack/verify/${reference}`,
+        `${Config.BACKEND_BASE_URI}/payments/paystack/verify/${reference}`,
         {
           method: "GET",
         },
