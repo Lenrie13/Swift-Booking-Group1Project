@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUs.css'; // Import the CSS file
-import aboutUsImage from '../assets/SwiftBookingImages/aboutus.jpeg'; // Corrected the path to the image
+import aboutUsImage from '../assets/SwiftBookingImages/aboutus.jpg'; // Corrected the path to the image
 
 function AboutUs() {
   return (
