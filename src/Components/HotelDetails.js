@@ -132,8 +132,7 @@ function HotelDetails() {
     const paymentData = {
       email: bookingDetails.email,
       amount: selectedRoom.price * bookingDetails.stayDuration,
-      callback_url: `${window.location.origin}`,
-      //callback_url: `${window.location.origin}/payment/callback`,
+      callback_url: `${window.location.origin}/payment/callback`,
       booking_id: bookingId,
     };
 
